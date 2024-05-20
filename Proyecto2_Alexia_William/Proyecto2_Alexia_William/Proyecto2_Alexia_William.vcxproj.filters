@@ -13,36 +13,78 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de origen\Tableros_CPP">
+      <UniqueIdentifier>{ad4effd7-1378-4ed3-bf18-6c41ad7ec025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Tableros_H">
+      <UniqueIdentifier>{0657c7e6-fd7c-475b-a511-40c5a76f3b58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Jugador_H">
+      <UniqueIdentifier>{613928ba-f15a-416f-9b9c-c4b2060ac3d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Jugadas_H">
+      <UniqueIdentifier>{acf2dc6d-bea9-41ae-b8d3-72117308ac33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\ClasePequeñas">
+      <UniqueIdentifier>{6ee0e2b3-37bc-4735-90e1-ce5af1ab753a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Jugador_CPP">
+      <UniqueIdentifier>{6c38af9c-abaa-46de-9792-616b28bea42f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="ObjetoBase.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="TableroCompuesto.cpp">
+      <Filter>Archivos de origen\Tableros_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="TableroComponente.cpp">
+      <Filter>Archivos de origen\Tableros_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablero3X3.cpp">
+      <Filter>Archivos de origen\Tableros_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablero3X4.cpp">
+      <Filter>Archivos de origen\Tableros_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablero3X5.cpp">
+      <Filter>Archivos de origen\Tableros_CPP</Filter>
+    </ClCompile>
     <ClCompile Include="Jugador.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Linea.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Vertice.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Jugador_CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Jugador.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="TableroComponente.h">
+      <Filter>Archivos de encabezado\Tableros_H</Filter>
     </ClInclude>
-    <ClInclude Include="Linea.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="TableroCompuesto.h">
+      <Filter>Archivos de encabezado\Tableros_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablero3X3.h">
+      <Filter>Archivos de encabezado\Tableros_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablero3X4.h">
+      <Filter>Archivos de encabezado\Tableros_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablero3X5.h">
+      <Filter>Archivos de encabezado\Tableros_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Jugada.h">
+      <Filter>Archivos de encabezado\Jugadas_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Jugador.h">
+      <Filter>Archivos de encabezado\Jugador_H</Filter>
     </ClInclude>
     <ClInclude Include="ClasesUtiles.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\ClasePequeñas</Filter>
     </ClInclude>
-    <ClInclude Include="Vertice.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Elemento.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="ObjetoBase.h">
+      <Filter>Archivos de encabezado\ClasePequeñas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

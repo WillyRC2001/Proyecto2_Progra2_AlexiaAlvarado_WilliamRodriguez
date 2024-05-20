@@ -128,16 +128,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Jugador.cpp" />
-    <ClCompile Include="Linea.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Vertice.cpp" />
+    <ClCompile Include="ObjetoBase.cpp" />
+    <ClCompile Include="Tablero3X3.cpp" />
+    <ClCompile Include="Tablero3X4.cpp" />
+    <ClCompile Include="Tablero3X5.cpp" />
+    <ClCompile Include="TableroComponente.cpp" />
+    <ClCompile Include="TableroCompuesto.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClasesUtiles.h" />
-    <ClInclude Include="Elemento.h" />
+    <ClInclude Include="Jugada.h" />
     <ClInclude Include="Jugador.h" />
-    <ClInclude Include="Linea.h" />
-    <ClInclude Include="Vertice.h" />
+    <ClInclude Include="ObjetoBase.h" />
+    <ClInclude Include="Tablero3X3.h" />
+    <ClInclude Include="Tablero3X4.h" />
+    <ClInclude Include="Tablero3X5.h" />
+    <ClInclude Include="TableroComponente.h" />
+    <ClInclude Include="TableroCompuesto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

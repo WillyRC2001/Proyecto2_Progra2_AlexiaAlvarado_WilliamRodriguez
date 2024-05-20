@@ -1,9 +1,32 @@
 #include "ClasesUtiles.h"
-#include "Linea.h"
-#include "Vertice.h"
+#include "TableroCompuesto.h"
+#include "Tablero3X3.h"
+#include "Tablero3X4.h"
+#include "Tablero3X5.h"
 
 int main() {
-	Linea* lin = new Linea();
+	Tablero3x5 tableroCompuesto;
+
+	cout << tableroCompuesto.toString() << endl;
+	tableroCompuesto.SetLineaCelda(1,0);
+	cout << tableroCompuesto.toString() << endl;
+	tableroCompuesto.SetLineaCelda(0,1);
+	cout << tableroCompuesto.toString() << endl;
+
+
+	/*tableroCompuesto.setValorCelda(0, 3, "-");
+	tableroCompuesto.setValorCelda(0, 4, "-");
+	tableroCompuesto.setValorCelda(1, 3, "|");
+	tableroCompuesto.setValorCelda(1, 4, "|");
+	tableroCompuesto.setValorCelda(4, 3, "-");
+	tableroCompuesto.setValorCelda(4, 4, "-");
+	cout << tableroCompuesto.toString() << endl;*/
+
+
+
+	/*Tablero3X3* prueba1 = new Tablero3X3();
+	cout << prueba1->toString();*/
+	/*Linea* lin = new Linea();
 	Vertice* ver = new Vertice();
 	int fila = 5;
 	int columna = 5;
@@ -31,7 +54,7 @@ int main() {
 			cout << vec[i][j];
 		}
 		cout << endl;
-	}
+	}*/
 
 
 	return 0;

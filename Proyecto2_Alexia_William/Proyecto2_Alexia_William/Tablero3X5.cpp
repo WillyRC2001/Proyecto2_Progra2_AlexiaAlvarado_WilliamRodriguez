@@ -4,9 +4,12 @@
 Tablero3x5::Tablero3x5() {
 	tablero = new char* [11];
 	for (int i = 0; i < 11; i++) {
-		tablero[i] = new char[7];
-		for (int j = 0; j < 7; j++) {
-			tablero[i][j] = '+';
+		tablero[i] = new char[11];
+		for (int j = 0; j < 11; j++) {
+			if (i % 2 == 0 && j % 2 == 0)
+				tablero[i][j] = '+';
+			else
+				tablero[i][j] = ' ';
 		}
 	}
 }
@@ -17,12 +20,21 @@ Tablero3x5::~Tablero3x5() {
 	}
 	delete[] tablero;
 }
+int Tablero3x5::getAncho() const { return 11; };
+int Tablero3x5::getAlto() const { return 11; };
 
-string Tablero3x5::GetValorCelda(int f, int c) {
-	if (f >= 0 && f < 7 && c >= 0 && c < 11) {
+char* Tablero3x5::GetValorCelda(int f, int c) {
+	if (f < 0 || f >= 11 || c < 0 || c >= 11) {
+		throw out_of_range("posicion fuera del tablero");
+	}
+	else {
+		return &tablero[f][c];
+	}
+
+	/*if (f >= 0 && f < 7 && c >= 0 && c < 7) {
 		return string(1, tablero[f][c]);
 	}
-	return "";
+	return "";*/
 }
 
 void Tablero3x5::SetLineaCelda(int f, int c)

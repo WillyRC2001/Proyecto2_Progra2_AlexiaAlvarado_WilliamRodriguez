@@ -3,9 +3,12 @@
 Tablero3x4::Tablero3x4() {
 	tablero = new char* [9];
 	for (int i = 0; i < 9; i++) {
-		tablero[i] = new char[7];
-		for (int j = 0; j < 7; j++) {
-			tablero[i][j] = '+';
+		tablero[i] = new char[9];
+		for (int j = 0; j < 9; j++) {
+			if (i % 2 == 0 && j % 2 == 0)
+				tablero[i][j] = '+';
+			else
+				tablero[i][j] = ' ';
 		}
 	}
 }
@@ -16,12 +19,21 @@ Tablero3x4::~Tablero3x4() {
 	}
 	delete[] tablero;
 }
+int Tablero3x4::getAncho() const { return 9; };
+int Tablero3x4::getAlto() const { return 9; };
 
-string Tablero3x4::GetValorCelda(int f, int c) {
-	if (f >= 0 && f < 7 && c >= 0 && c < 9) {
+char* Tablero3x4::GetValorCelda(int f, int c) {
+	if (f < 0 || f >= 9 || c < 0 || c >= 9) {
+		throw out_of_range("posicion fuera del tablero");
+	}
+	else {
+		return &tablero[f][c];
+	}
+
+	/*if (f >= 0 && f < 7 && c >= 0 && c < 7) {
 		return string(1, tablero[f][c]);
 	}
-	return "";
+	return "";*/
 }
 
 void Tablero3x4::SetLineaCelda(int f, int c)

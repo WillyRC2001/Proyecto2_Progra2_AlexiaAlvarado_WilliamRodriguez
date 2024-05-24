@@ -12,15 +12,15 @@ TableroCompuesto::~TableroCompuesto() {
 	delete[] vec;
 }
 
-string TableroCompuesto::GetValorCelda(int f, int c){
-
-	for (int i = 0; i < can; ++i) {
+char* TableroCompuesto::GetValorCelda(int f, int c){
+	return new char(' ');
+	/*for (int i = 0; i < can; ++i) {
 		string valor = vec[i]->GetValorCelda(f, c);
 		if (!valor.empty()) {
 			return valor;
 		}
 	}
-	return "";
+	return "";*/
 	/*if (f >= 0 && f < 6 && c >= 0 && c < 6) {
 		return tablero[f][c];
 	}
@@ -130,3 +130,5 @@ string TableroCompuesto::toString() const{
 	//return s.str();
 	return "";
 }
+int TableroCompuesto::getAncho() const { return 0; }
+int TableroCompuesto::getAlto() const { return 0; }

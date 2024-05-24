@@ -42,9 +42,6 @@
     <ClCompile Include="TableroCompuesto.cpp">
       <Filter>Archivos de origen\Tableros_CPP</Filter>
     </ClCompile>
-    <ClCompile Include="TableroComponente.cpp">
-      <Filter>Archivos de origen\Tableros_CPP</Filter>
-    </ClCompile>
     <ClCompile Include="Tablero3X3.cpp">
       <Filter>Archivos de origen\Tableros_CPP</Filter>
     </ClCompile>

@@ -5,7 +5,10 @@ Tablero3x3::Tablero3x3(){
 	for (int i = 0; i < 7; i++) {
 		tablero[i] = new char[7];
 		for (int j = 0; j < 7; j++) {
-			tablero[i][j] = '+'; 
+			if (i % 2 == 0 && j % 2 == 0)
+				tablero[i][j] = '+';
+			else
+				tablero[i][j] = ' ';
 		}
 	}
 }
@@ -16,12 +19,21 @@ Tablero3x3::~Tablero3x3(){
 	}
 	delete[] tablero;
 }
+int Tablero3x3::getAncho() const { return 7; };
+int Tablero3x3::getAlto() const { return 7; };
 
-string Tablero3x3::GetValorCelda(int f, int c){
-	if (f >= 0 && f < 7 && c >= 0 && c < 7) {
+char* Tablero3x3::GetValorCelda(int f, int c){
+	if (f < 0 || f >= 7 || c < 0 || c >= 7) {
+		throw out_of_range("posicion fuera del tablero");
+	}
+	else {
+		return &tablero[f][c];
+	}
+	
+	/*if (f >= 0 && f < 7 && c >= 0 && c < 7) {
 		return string(1, tablero[f][c]);
 	}
-	return "";
+	return "";*/
 }
 
 void Tablero3x3::SetLineaCelda(int f, int c)
@@ -61,7 +73,6 @@ bool Tablero3x3::Vacio(int f, int c){
 }
 //bool Tablero3x3::Add(TableroComponente*){}
 	//Supongo que será un metodo para agregar otro Tablero
-
 
 string Tablero3x3::toString() const{
 	// Agregar los números de las columnas

@@ -133,7 +133,6 @@
     <ClCompile Include="Tablero3X3.cpp" />
     <ClCompile Include="Tablero3X4.cpp" />
     <ClCompile Include="Tablero3X5.cpp" />
-    <ClCompile Include="TableroComponente.cpp" />
     <ClCompile Include="TableroCompuesto.cpp" />
     <ClCompile Include="TableroJuego.cpp" />
   </ItemGroup>

@@ -28,6 +28,8 @@ int main() {
 	compuesto->AddMatriz(tablero3x4);
 	compuesto->AddMatriz(tablero3x5);
 
+
+
 	cout << "cantidad de elementos de la matriz: " << compuesto->GetCantidad() << endl << endl;
 
 	system("pause");
@@ -35,9 +37,16 @@ int main() {
 
 	cout << " --- TABLERO GRANDE ALEATORIO ---" << endl;
 	TableroJuego* juego = new TableroJuego();
-
 	juego->activandoMatriz(compuesto);
+	juego->SetLineaCelda(1, 0);
 	cout << juego->toString()<<endl;
+	int a;
+	int b;
+	cin >> a;
+	cin >> b;
+	juego->SetLineaCelda(a, b);
+	system("cls");
+	cout << juego->toString() << endl;
 
 	
 

@@ -135,6 +135,7 @@
     <ClCompile Include="Tablero3X5.cpp" />
     <ClCompile Include="TableroComponente.cpp" />
     <ClCompile Include="TableroCompuesto.cpp" />
+    <ClCompile Include="TableroJuego.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClasesUtiles.h" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Tablero3X5.h" />
     <ClInclude Include="TableroComponente.h" />
     <ClInclude Include="TableroCompuesto.h" />
+    <ClInclude Include="TableroJuego.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

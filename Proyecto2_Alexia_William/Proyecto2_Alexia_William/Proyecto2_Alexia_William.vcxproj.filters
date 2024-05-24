@@ -57,6 +57,9 @@
     <ClCompile Include="Jugador.cpp">
       <Filter>Archivos de origen\Jugador_CPP</Filter>
     </ClCompile>
+    <ClCompile Include="TableroJuego.cpp">
+      <Filter>Archivos de origen\Tableros_CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TableroComponente.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="ObjetoBase.h">
       <Filter>Archivos de encabezado\ClasePequeñas</Filter>
+    </ClInclude>
+    <ClInclude Include="TableroJuego.h">
+      <Filter>Archivos de encabezado\Tableros_H</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

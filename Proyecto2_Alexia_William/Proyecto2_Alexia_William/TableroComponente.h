@@ -3,17 +3,16 @@
 #include "ObjetoBase.h"
 
 class TableroComponente : public ObjetoBase{
-protected:
-	string** tablero;
-	int filas;
-	int columnas;
+
 public:
-	TableroComponente(int, int);
-	virtual~TableroComponente();
+	TableroComponente()=default;
+	virtual~TableroComponente()=default;
+
 	virtual string GetValorCelda(int, int) = 0;
 	virtual void SetLineaCelda(int, int) = 0;
+
 	virtual bool Vacio(int, int) = 0;
-	virtual void Add(TableroComponente&) = 0;
+	//virtual bool Add(TableroComponente*) = 0; //yo lo elimino de aqui y lo dejo como solo del compuesto
 	virtual string toString() const = 0;
 	
 };

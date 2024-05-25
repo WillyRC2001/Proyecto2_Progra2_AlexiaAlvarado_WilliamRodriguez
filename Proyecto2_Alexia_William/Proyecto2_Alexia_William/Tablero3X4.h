@@ -11,6 +11,6 @@ public:
 	virtual void SetLineaCelda(int, int) override;
 	virtual bool Vacio(int, int) override;
 	virtual string toString() const;
-	virtual int getAncho() const;
-	virtual int getAlto() const;
+	virtual int AnchuraColumnas() const;
+	virtual int AlturaFilas() const;
 };

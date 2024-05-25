@@ -19,8 +19,8 @@ Tablero3x4::~Tablero3x4() {
 	}
 	delete[] tablero;
 }
-int Tablero3x4::getAncho() const { return 9; };
-int Tablero3x4::getAlto() const { return 9; };
+int Tablero3x4::AnchuraColumnas() const { return 9; };
+int Tablero3x4::AlturaFilas() const { return 9; };
 
 char* Tablero3x4::GetValorCelda(int f, int c) {
 	if (f < 0 || f >= 9 || c < 0 || c >= 9) {

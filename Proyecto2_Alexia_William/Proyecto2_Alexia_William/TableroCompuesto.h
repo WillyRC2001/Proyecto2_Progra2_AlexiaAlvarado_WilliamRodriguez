@@ -25,7 +25,7 @@ public:
 	TableroComponente* obtenerMatriz(int pos) {
 		return vec[pos];
 	}
-	virtual int getAncho() const;
-	virtual int getAlto() const;
+	virtual int AnchuraColumnas() const;
+	virtual int AlturaFilas() const;
 
 };

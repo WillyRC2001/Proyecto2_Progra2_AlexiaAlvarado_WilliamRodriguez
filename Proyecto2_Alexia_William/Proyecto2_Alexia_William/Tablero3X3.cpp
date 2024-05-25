@@ -19,8 +19,8 @@ Tablero3x3::~Tablero3x3(){
 	}
 	delete[] tablero;
 }
-int Tablero3x3::getAncho() const { return 7; };
-int Tablero3x3::getAlto() const { return 7; };
+int Tablero3x3::AnchuraColumnas() const { return 7; };
+int Tablero3x3::AlturaFilas() const { return 7; };
 
 char* Tablero3x3::GetValorCelda(int f, int c){
 	if (f < 0 || f >= 7 || c < 0 || c >= 7) {

@@ -20,8 +20,8 @@ Tablero3x5::~Tablero3x5() {
 	}
 	delete[] tablero;
 }
-int Tablero3x5::getAncho() const { return 11; };
-int Tablero3x5::getAlto() const { return 11; };
+int Tablero3x5::AnchuraColumnas() const { return 11; };
+int Tablero3x5::AlturaFilas() const { return 11; };
 
 char* Tablero3x5::GetValorCelda(int f, int c) {
 	if (f < 0 || f >= 11 || c < 0 || c >= 11) {

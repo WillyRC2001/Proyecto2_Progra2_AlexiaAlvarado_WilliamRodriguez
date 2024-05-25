@@ -14,7 +14,9 @@ public:
     bool Vacio(int x, int y);
     string GetValorCelda(int x, int y);
     void SetLineaCelda(int x, int y);
-    void activandoMatriz(TableroCompuesto* vec);
+    //void activandoMatriz(TableroCompuesto* vec);
+    void ActivarMatriz(TableroCompuesto* vec);
+
     string toString();
    
 };

@@ -40,7 +40,10 @@ int main() {
 	cout << juego->toString() << endl;
 	int a;
 	int b;
+	cout << endl<<endl;
+	cout << "digite fila: ";
 	cin >> a;
+	cout << "digite columna: ";
 	cin >> b;
 	juego->SetLineaCelda(a, b);
 	system("cls");

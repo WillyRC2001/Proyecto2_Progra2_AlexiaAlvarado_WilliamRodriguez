@@ -57,6 +57,9 @@
     <ClCompile Include="TableroJuego.cpp">
       <Filter>Archivos de origen\Tableros_CPP</Filter>
     </ClCompile>
+    <ClCompile Include="JugadorHumano.cpp">
+      <Filter>Archivos de origen\Jugador_CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TableroComponente.h">
@@ -88,6 +91,12 @@
     </ClInclude>
     <ClInclude Include="TableroJuego.h">
       <Filter>Archivos de encabezado\Tableros_H</Filter>
+    </ClInclude>
+    <ClInclude Include="JugadorHumano.h">
+      <Filter>Archivos de encabezado\Jugador_H</Filter>
+    </ClInclude>
+    <ClInclude Include="JugadorComputadora.h">
+      <Filter>Archivos de encabezado\Jugador_H</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

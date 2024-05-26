@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Jugador.cpp" />
+    <ClCompile Include="JugadorHumano.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjetoBase.cpp" />
     <ClCompile Include="Tablero3X3.cpp" />
@@ -140,6 +141,8 @@
     <ClInclude Include="ClasesUtiles.h" />
     <ClInclude Include="Jugada.h" />
     <ClInclude Include="Jugador.h" />
+    <ClInclude Include="JugadorComputadora.h" />
+    <ClInclude Include="JugadorHumano.h" />
     <ClInclude Include="ObjetoBase.h" />
     <ClInclude Include="Tablero3X3.h" />
     <ClInclude Include="Tablero3X4.h" />

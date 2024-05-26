@@ -1,10 +1,5 @@
 #include "ClasesUtiles.h"
-#include "TableroCompuesto.h"
-#include "TableroComponente.h"
-#include "TableroJuego.h"
-#include "Tablero3X3.h"
-#include "Tablero3X4.h"
-#include "Tablero3X5.h"
+#include "Tableros.h"
 
 int main() {
 

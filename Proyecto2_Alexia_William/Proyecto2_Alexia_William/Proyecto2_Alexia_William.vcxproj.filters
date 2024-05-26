@@ -31,14 +31,20 @@
     <Filter Include="Archivos de origen\Jugador_CPP">
       <UniqueIdentifier>{6c38af9c-abaa-46de-9792-616b28bea42f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Estrategia">
+      <UniqueIdentifier>{662c0401-50bb-4f2c-886b-5028deaba997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Jugadas_CPP">
+      <UniqueIdentifier>{59ff0529-589d-48b6-ae52-8ad62b784da7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\ClasesPequeñas_CPP">
+      <UniqueIdentifier>{3655fa52-d5e5-43eb-a20d-9ed417cdba97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Interfaz MAIN">
+      <UniqueIdentifier>{c06f9305-5349-4443-a99c-e51c56d4b0c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjetoBase.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="TableroCompuesto.cpp">
       <Filter>Archivos de origen\Tableros_CPP</Filter>
     </ClCompile>
@@ -59,6 +65,18 @@
     </ClCompile>
     <ClCompile Include="JugadorHumano.cpp">
       <Filter>Archivos de origen\Jugador_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Punto.cpp">
+      <Filter>Archivos de origen\Jugadas_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Reglas.cpp">
+      <Filter>Archivos de origen\Jugadas_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjetoBase.cpp">
+      <Filter>Archivos de origen\ClasesPequeñas_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Archivos de origen\Interfaz MAIN</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="JugadorComputadora.h">
       <Filter>Archivos de encabezado\Jugador_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Punto.h">
+      <Filter>Archivos de encabezado\Jugadas_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Reglas.h">
+      <Filter>Archivos de encabezado\Jugadas_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Tableros.h">
+      <Filter>Archivos de encabezado\ClasePequeñas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

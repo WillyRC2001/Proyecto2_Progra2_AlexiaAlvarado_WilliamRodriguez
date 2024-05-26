@@ -131,6 +131,8 @@
     <ClCompile Include="JugadorHumano.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjetoBase.cpp" />
+    <ClCompile Include="Punto.cpp" />
+    <ClCompile Include="Reglas.cpp" />
     <ClCompile Include="Tablero3X3.cpp" />
     <ClCompile Include="Tablero3X4.cpp" />
     <ClCompile Include="Tablero3X5.cpp" />
@@ -144,12 +146,15 @@
     <ClInclude Include="JugadorComputadora.h" />
     <ClInclude Include="JugadorHumano.h" />
     <ClInclude Include="ObjetoBase.h" />
+    <ClInclude Include="Punto.h" />
+    <ClInclude Include="Reglas.h" />
     <ClInclude Include="Tablero3X3.h" />
     <ClInclude Include="Tablero3X4.h" />
     <ClInclude Include="Tablero3X5.h" />
     <ClInclude Include="TableroComponente.h" />
     <ClInclude Include="TableroCompuesto.h" />
     <ClInclude Include="TableroJuego.h" />
+    <ClInclude Include="Tableros.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

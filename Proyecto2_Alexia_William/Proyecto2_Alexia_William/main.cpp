@@ -35,13 +35,23 @@ int main() {
 	cout << juego->toString() << endl;
 	int a;
 	int b;
-	cout << endl<<endl;
-	cout << "digite fila: ";
-	cin >> a;
-	cout << "digite columna: ";
-	cin >> b;
-	juego->SetLineaCelda(a, b);
-	system("cls");
+	int i = 1;
+	string nom = "William";
+	char Fnom = nom[0];
+	do {
+		cout << endl << endl;
+		cout << "digite fila: ";
+		cin >> a;
+		cout << "digite columna: ";
+		cin >> b;
+		juego->SetLineaCelda(a, b);
+		system("pause");
+		system("cls");
+		cout << juego->toString() << endl;
+		i++;
+	} while (i <= 4);
+	cout << "Matriz con la letra" << endl << endl;
+	juego->CasillaLlena(Fnom);
 	cout << juego->toString() << endl;
 
 	system("pause");

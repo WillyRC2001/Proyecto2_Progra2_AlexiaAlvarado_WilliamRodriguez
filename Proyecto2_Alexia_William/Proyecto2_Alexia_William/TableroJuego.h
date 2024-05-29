@@ -16,6 +16,8 @@ public:
     void SetLineaCelda(int x, int y);
     //void activandoMatriz(TableroCompuesto* vec);
     void ActivarMatriz(TableroCompuesto* vec);
+    //Metodo para agregar la letra (hecho por william)
+    bool CasillaLlena(char nom);
 
     string toString();
    

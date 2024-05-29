@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClasesUtiles.h" />
+    <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugada.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="JugadorComputadora.h" />

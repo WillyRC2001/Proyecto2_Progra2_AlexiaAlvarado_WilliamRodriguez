@@ -117,3 +117,20 @@ void TableroJuego::ActivarMatriz(TableroCompuesto* vec) {
         }
     }
 }
+
+bool TableroJuego::CasillaLlena(char nom) {
+    bool verificacion = false;
+    //Recorre la matriz 20X20
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            //los centros de la matriz son cuando las filas y columnas son impares
+            if (i % 2 == 0 && j % 2 == 0 && mat[i][j] == ' ') { //La condicion mat[i][j] == ' ' es para verificar si está dentro del rango y no esté ya ocupado
+                if (mat[i][j - 1] != ' ' && mat[i][j + 1] != ' ' && mat[i - 1][j] != ' ' && mat[i + 1][j] != ' ') {
+                    mat[i][j] = nom;
+                    verificacion = true;
+                }
+            }
+        }
+    }
+    return verificacion;
+}

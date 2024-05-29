@@ -125,5 +125,8 @@
     <ClInclude Include="Tableros.h">
       <Filter>Archivos de encabezado\ClasePequeñas</Filter>
     </ClInclude>
+    <ClInclude Include="Juego.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

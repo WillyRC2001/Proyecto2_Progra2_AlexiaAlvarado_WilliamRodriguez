@@ -134,3 +134,15 @@ bool TableroJuego::CasillaLlena(char nom) {
     }
     return verificacion;
 }
+
+bool TableroJuego::HayEspacios()
+{
+    bool espacio = false;
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            if (mat[i][j] == ' ')
+                espacio = true;
+        }
+    }
+    return espacio;
+}

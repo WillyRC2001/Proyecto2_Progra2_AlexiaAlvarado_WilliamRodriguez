@@ -78,6 +78,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen\Interfaz MAIN</Filter>
     </ClCompile>
+    <ClCompile Include="Juego.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Jugada.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TableroComponente.h">

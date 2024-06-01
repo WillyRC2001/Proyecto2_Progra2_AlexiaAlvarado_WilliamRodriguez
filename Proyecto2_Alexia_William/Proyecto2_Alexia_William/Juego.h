@@ -10,12 +10,12 @@ private:
 	Jugador* jugador1;	//Jugador 1 siempre va a ser humano
 	Jugador* jugador2;	//Jugador 2 puede ser tanto humano como computadora
 public:
-	Juego(Jugador* jug1, Jugador* jug2);
+	Juego(Jugador* jug1, Jugador* jug2, TableroJuego* tab);
 	virtual ~Juego();
-	//string toString();
-	Jugador* InfoJugador_1();
-	Jugador* InfoJugador_2();
-	TableroJuego* MostrarTablero();	//Usar el toString de TableroJuego
-	//Metodos que creo que son mas de la clase Jugada
-	//void AgregarLinea(int f,int c);
+	string InfoJugador_1();
+	string InfoJugador_2();
+	string MostrarTablero();	//Usar el toString de TableroJuego
+	void HacerJugada(Jugador* jug, int f, int c);
+	//void ContarPuntos();
+	bool HayJugada();
 };

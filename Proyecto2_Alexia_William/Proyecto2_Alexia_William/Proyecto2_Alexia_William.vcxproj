@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Juego.cpp" />
+    <ClCompile Include="Jugada.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="JugadorHumano.cpp" />
     <ClCompile Include="main.cpp" />

@@ -1,5 +1,7 @@
 #include "ClasesUtiles.h"
+#include "Juego.h"
 #include "Tableros.h"
+#include "JugadorHumano.h"
 
 int main() {
 
@@ -28,7 +30,28 @@ int main() {
 	system("pause");
 	system("cls");
 
-	cout << " --- TABLERO GRANDE ALEATORIO ---" << endl;
+
+	Jugador* jugador1 = new JugadorHumano("William");
+	Jugador* jugador2 = new JugadorHumano("Alexia");
+	TableroJuego* tab = new TableroJuego();
+	tab->ActivarMatriz(compuesto);
+	Juego* juego1 = new Juego(jugador1, jugador2, tab);
+	cout<< juego1->MostrarTablero() << endl;
+	int fila;
+	int columna;
+	system("pause");
+	system("cls");
+	do {
+		cout << juego1->MostrarTablero() << endl;
+		cin >> fila;
+		cin >> columna;
+		juego1->HacerJugada(jugador1, fila, columna);
+		cout << juego1->MostrarTablero() << endl;
+		system("pause");
+		system("cls");
+	} while (juego1->HayJugada() != false);
+
+	/*cout << " --- TABLERO GRANDE ALEATORIO ---" << endl;
 	TableroJuego* juego = new TableroJuego();
 	juego->ActivarMatriz(compuesto);
 	juego->SetLineaCelda(1, 0);
@@ -52,7 +75,7 @@ int main() {
 	} while (i <= 4);
 	cout << "Matriz con la letra" << endl << endl;
 	juego->CasillaLlena(Fnom);
-	cout << juego->toString() << endl;
+	cout << juego->toString() << endl;*/
 
 	system("pause");
 	return 0;

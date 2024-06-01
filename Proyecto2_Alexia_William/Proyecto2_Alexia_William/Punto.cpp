@@ -1,18 +1,19 @@
 #include "Punto.h"
 
-Punto::Punto(TableroJuego* ta)
-{
-	tablero = ta;
-}
-Punto::~Punto() {}
-
-void Punto::anotarPunto(int f, int c)
-{
-	tablero->SetLineaCelda(f, c);
-}
-
-
-void Punto::anotarPuntoGanador(char)
-{
-
-}
+//Punto::Punto(TableroJuego* ta)
+//{
+//	tablero = ta;
+//}
+//Punto::~Punto() {}
+//
+//void Punto::anotarLinea(int f, int c)
+//{
+//	tablero->SetLineaCelda(f, c);
+//	tablero->CasillaLlena();
+//}
+//
+//
+//void Punto::anotarPuntoGanador(char)
+//{
+//
+//}

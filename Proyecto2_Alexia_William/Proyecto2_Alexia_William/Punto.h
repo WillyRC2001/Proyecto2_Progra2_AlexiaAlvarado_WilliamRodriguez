@@ -8,6 +8,6 @@ private:
 public:
 	Punto(TableroJuego*);
 	virtual~Punto();
-	void anotarPunto(int, int);
+	void anotarLinea(int, int);
 	void anotarPuntoGanador(char);
 };

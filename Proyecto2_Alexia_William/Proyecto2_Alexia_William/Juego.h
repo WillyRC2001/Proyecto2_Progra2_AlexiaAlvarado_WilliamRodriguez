@@ -1,6 +1,6 @@
 #pragma once
 #include "ClasesUtiles.h"
-#include "Jugador.h"
+#include "Jugadores.h"
 #include "TableroJuego.h"
 #include "Jugada.h"
 

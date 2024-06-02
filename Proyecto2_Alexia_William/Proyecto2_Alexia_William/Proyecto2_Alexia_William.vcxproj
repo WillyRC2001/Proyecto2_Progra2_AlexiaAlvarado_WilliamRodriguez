@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ExcepcionFueraRango.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Jugada.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="JugadorHumano.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="ObjetoBase.cpp" />
     <ClCompile Include="Punto.cpp" />
     <ClCompile Include="Reglas.cpp" />
@@ -143,11 +145,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClasesUtiles.h" />
+    <ClInclude Include="Controler.h" />
+    <ClInclude Include="Estrategia.h" />
+    <ClInclude Include="Excepcion.h" />
+    <ClInclude Include="Excepciones_H.h" />
+    <ClInclude Include="ExcepcionFueraRango.h" />
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugada.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="JugadorComputadora.h" />
+    <ClInclude Include="Jugadores.h" />
     <ClInclude Include="JugadorHumano.h" />
+    <ClInclude Include="MenuPrincipal.h" />
     <ClInclude Include="ObjetoBase.h" />
     <ClInclude Include="Punto.h" />
     <ClInclude Include="Reglas.h" />

@@ -2,7 +2,7 @@
 
 Jugador::Jugador(string nom) : nombre(nom)
 {
-	Totalpuntos = 0;
+	puntos = 0;
 	victorias = 0;
 }
 

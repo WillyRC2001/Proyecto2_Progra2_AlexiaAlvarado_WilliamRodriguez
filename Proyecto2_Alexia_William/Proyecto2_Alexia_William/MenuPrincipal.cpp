@@ -19,7 +19,77 @@ int MenuPrincipal::menuPrincipal()
 	return op;
 }
 
-void MenuPrincipal::OpcionIniciar(){
+void MenuPrincipal::OpcionIniciar() {
+	Juego* juego;
+	TableroCompuesto* compuesto;
+	TableroJuego* tablero = new TableroJuego();
+	Jugador* jug1 = NULL;
+	Jugador* jug2 = NULL;
+	string nom;
+	int opJugador;
+	cout << "Elige la modalidad: " << endl;
+	cout << "[1] Jugador vs Jugador" << endl;
+	cout << "[2] Jugador vs Computadora" << endl;
+	cin >> opJugador;
+	system("cls");
+	switch (opJugador) {
+	case 1:	//Opcion de JvsJ
+		cout << "Jugador 1" << endl;
+		jug1 = MenuPrincipal::crearJugador();
+		cout << "Jugador 2" << endl;
+		jug2 = MenuPrincipal::crearJugador();
+		break;
+	case 2:	//Opcion de JvsPC
+		cout << "Jugador 1" << endl;
+		jug1 = MenuPrincipal::crearJugador();
+		jug2 = NULL;
+		break;
+	}//Fin del switch
+	cout << "Creando El Tablero de Juego..." << endl;
+	compuesto = MenuPrincipal::creartablero();
+	tablero->ActivarMatriz(compuesto);
+	juego = new Juego(jug1, jug2, tablero);
+	system("pause");
+	system("cls");
+	//A partir de aqui empieza el juego
+	int fila;
+	int columna;
+	if (jug2 != NULL) {	//Juego de JvsJ
+		do {	//IMPORTANTE Arreglar
+			Jugada* jugadaReglas = new Jugada(NULL);	//Para mostrar las reglas
+			jugadaReglas->MostrarReglas();
+			cout << endl << endl;
+			cout << juego->MostrarTablero() << endl;
+			cout << "==============TURNO JUGADOR 1==============" << endl;
+			cout << "Digite la fila: "; cin >> fila;
+			cout << "digite la columna:"; cin >> columna;
+			juego->HacerJugada(jug1, fila, columna);
+			system("cls");
+			jugadaReglas->MostrarReglas();
+			cout << endl << endl;
+			cout << juego->MostrarTablero() << endl;
+			cout << "==============TURNO JUGADOR 2==============" << endl;
+			cout << "Digite la fila: "; cin >> fila;
+			cout << "digite la columna:"; cin >> columna;
+			juego->HacerJugada(jug2, fila, columna);
+			system("cls");
+			delete jugadaReglas;
+		} while (juego->HayJugada() != false);
+	}
+	else {		//Juego JvsPC
+		cout << "Jugador vs Computadora, proximamente...." << endl;
+		//Aqui vendría todo el proceso del juego contra la computadora4
+	}
+	//Fin del juego, Revisando quien es el ganador
+	if (jug1->getPuntos() > jug2->getPuntos()) {
+		cout << "Ganador es: " << jug1->getNombreJugador() << "!!!!!" << endl;
+	}
+	else {
+		cout << "Ganador es: " << jug2->getNombreJugador() << "!!!!!" << endl;
+	}
+	system("pause");
+	system("cls");
+	//MenuPrincipal::menuPrincipal(); //En teoria esto lo devolvería al menu principal una vez que ya terminó la partida
 }
 void MenuPrincipal::OpcionEnQueConsi(){
 	cout << "================En Que Consiste El Juego?===============" << endl;
@@ -35,7 +105,13 @@ void MenuPrincipal::OpcionEnQueConsi(){
 	cout << "3 + - +   +" << endl;
 	cout << endl;
 }
-void MenuPrincipal::OpcionSalir(){}
+void MenuPrincipal::OpcionSalir()
+{
+	cout << "---------------------> C R E A D O R E S <---------------------" << endl << endl;
+	cout << "Alexia Alvarado Alfaro  || Grupo 05 (1pm)" << endl;
+	cout << "William Rodriguez Campos  || Grupo 06 (3pm)" << endl;
+	cout << endl << "----------> G R A C I A S   P O R   U T I L I Z A R <----------" << endl << endl;
+}
 TableroCompuesto* MenuPrincipal::creartablero()
 {
 	int cant = 0, cont = 0, op = 0;
@@ -81,8 +157,9 @@ TableroCompuesto* MenuPrincipal::creartablero()
 Jugador* MenuPrincipal::crearJugador()
 {
 	string nombre;
-	cout << "Dijite su nombre "; getline(cin, nombre);
-	cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpia el búfer
+	cout << "Digite su nombre: "; getline(cin, nombre);
+	cin >> nombre;
+	//cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpia el búfer
 	Jugador* juga = new JugadorHumano(nombre);
 	return juga;
 }
@@ -128,12 +205,4 @@ void MenuPrincipal::compronarDouble(double entero)
 void MenuPrincipal::Bienvenida()
 {
 	cout << "----> Bienvenida <----" << endl;
-}
-
-void MenuPrincipal::salir()
-{
-	cout << "---------------------> C R E A D O R E S <---------------------" << endl << endl;
-	cout << "Alexia Alvarado Alfaro  || Grupo 05 (1pm)" << endl;
-	cout << "William Rodriguez Campos  || Grupo 06 (3pm)" << endl;
-	cout << endl << "----------> G R A C I A S   P O R   U T I L I Z A R <----------" << endl << endl;
 }

@@ -24,5 +24,5 @@ public:
 	static void comprobarInt(int);
 	static void compronarDouble(double);
 	static void Bienvenida();
-	static void salir(); /*Falta*/
+	//static void salir(); /*Falta*/
 };

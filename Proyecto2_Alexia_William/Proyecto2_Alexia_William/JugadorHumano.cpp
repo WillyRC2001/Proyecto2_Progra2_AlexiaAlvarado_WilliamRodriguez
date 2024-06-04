@@ -3,6 +3,7 @@
 
 JugadorHumano::JugadorHumano(string nom):Jugador(nom)
 {
+
 }
 
 JugadorHumano::~JugadorHumano()

@@ -4,8 +4,8 @@
 class Jugador { //aqui hay que utilizar el patron strategy (estrategia)
 protected: 
 	string nombre;
-	double puntos;
-	double victorias;
+	int puntos;
+	int victorias;
 public:
 	Jugador(string nom);
 	virtual ~Jugador();

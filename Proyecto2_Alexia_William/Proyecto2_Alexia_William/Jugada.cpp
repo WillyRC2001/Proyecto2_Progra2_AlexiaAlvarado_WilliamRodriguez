@@ -24,7 +24,9 @@ void Jugada::AgregarLinea(int f,int c, TableroJuego* tableroJugada)
 {
 	tableroJugada->SetLineaCelda(f,c); 
 	string nom = jugadorJugada->getNombreJugador();
-	cout << "Nombre: " << nom << endl;
 	char primLetra = nom[0];
-	tableroJugada->CasillaLlena(primLetra);
+	if (tableroJugada->CasillaLlena(primLetra) == true) {
+		int sumarPuntos = jugadorJugada->getPuntos() + 1;
+		jugadorJugada->setPuntos(sumarPuntos);
+	}
 }

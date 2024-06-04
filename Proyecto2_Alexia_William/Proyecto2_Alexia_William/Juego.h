@@ -3,6 +3,7 @@
 #include "Jugadores.h"
 #include "TableroJuego.h"
 #include "Jugada.h"
+#include "Tableros.h"
 
 class Juego {
 private:

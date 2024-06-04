@@ -28,6 +28,7 @@ string Juego::MostrarTablero()
 
 void Juego::HacerJugada(Jugador* jug, int f,int c)
 {
+	string opreglas;
 	Jugada* jugada = new Jugada(jug);
 	jugada->AgregarLinea(f, c, juego);
 	delete jugada;

@@ -6,17 +6,23 @@ class MenuPrincipal
 public:
 	//Principal
 	static int menuPrincipal();
+	//Menus Secundarios
+	static void OpcionIniciar();
+	static void OpcionEnQueConsi();
+	static void	OpcionSalir();
 	/*Tablero*/
-	TableroCompuesto* creartablero();
+	static TableroCompuesto* creartablero();
 	/*Jugador*/
-	Jugador* crearJugador();
+	static Jugador* crearJugador();
 	/*Jugada*/
+	static void MostrarReglas();
+	static void JugadaJugador(Juego* juego, int fila, int columna, Jugador* jug);
 	//Excepciones
 	static void excepcionRango(Excepcion*);
 	static void error();
 	/*Comprobacion*/
-	void comprobarInt(int);
-	void compronarDouble(double);
+	static void comprobarInt(int);
+	static void compronarDouble(double);
 	static void Bienvenida();
 	static void salir(); /*Falta*/
 };

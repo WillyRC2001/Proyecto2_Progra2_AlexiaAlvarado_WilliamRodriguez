@@ -99,6 +99,9 @@
     <ClCompile Include="MenuPrincipal.cpp">
       <Filter>Archivos de origen\Interfaz MAIN</Filter>
     </ClCompile>
+    <ClCompile Include="JugadorComputadora.cpp">
+      <Filter>Archivos de origen\Jugador_CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TableroComponente.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="MenuPrincipal.h">
       <Filter>Archivos de encabezado\Interfaz_H</Filter>
+    </ClInclude>
+    <ClInclude Include="EstrategiaAleatoria.h">
+      <Filter>Archivos de encabezado\Estrategia_H</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

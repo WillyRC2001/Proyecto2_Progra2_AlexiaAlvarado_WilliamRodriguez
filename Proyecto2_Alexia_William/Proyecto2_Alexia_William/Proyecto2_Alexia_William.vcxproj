@@ -131,6 +131,7 @@
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Jugada.cpp" />
     <ClCompile Include="Jugador.cpp" />
+    <ClCompile Include="JugadorComputadora.cpp" />
     <ClCompile Include="JugadorHumano.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="ClasesUtiles.h" />
     <ClInclude Include="Controler.h" />
     <ClInclude Include="Estrategia.h" />
+    <ClInclude Include="EstrategiaAleatoria.h" />
     <ClInclude Include="Excepcion.h" />
     <ClInclude Include="Excepciones_H.h" />
     <ClInclude Include="ExcepcionFueraRango.h" />

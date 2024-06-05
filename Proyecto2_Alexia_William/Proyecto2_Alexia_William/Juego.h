@@ -17,6 +17,7 @@ public:
 	string InfoJugador_2();
 	string MostrarTablero();	//Usar el toString de TableroJuego
 	void HacerJugada(Jugador* jug, int f, int c);
+	void HacerJugadaCompu(JugadorComputadora* jug,int f,int c);
 	//void ContarPuntos();
 	bool HayJugada();
 };

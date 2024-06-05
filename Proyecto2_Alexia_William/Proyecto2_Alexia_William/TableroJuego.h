@@ -13,7 +13,7 @@ public:
     virtual ~TableroJuego();
     bool Vacio(int x, int y);
     string GetValorCelda(int x, int y);
-    void SetLineaCelda(int x, int y);
+    bool SetLineaCelda(int x, int y);
     //void activandoMatriz(TableroCompuesto* vec);
     void ActivarMatriz(TableroCompuesto* vec);
     //Metodo para agregar la letra (hecho por william)

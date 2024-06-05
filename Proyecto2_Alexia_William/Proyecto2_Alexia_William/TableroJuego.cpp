@@ -30,27 +30,31 @@ string TableroJuego::GetValorCelda(int x, int y) {
         return &mat[x][y];
     }
 }
-void TableroJuego::SetLineaCelda(int x, int y) {
+bool TableroJuego::SetLineaCelda(int x, int y) {
+    bool verificar = false;
     if (x < 0 || x >= filas || y < 0 || y >= columnas) {
         throw out_of_range("Posición fuera del tablero habilitado...");
     }
 
     //Verificar si se puede agregar la linea vertical o horizontal
     if (mat[x][y] != 'O') {
-        if ((x % 2 == 1 && y % 2 == 0) || (x % 2 == 0 && y % 2 == 1)) {
+        if ((x % 2 == 1 && y % 2 == 0) && (mat[x][y] == ' ') || (x % 2 == 0 && y % 2 == 1) && (mat[x][y] == ' ')) {
             if (x % 2 == 0 && y % 2 == 1) {
                 mat[x][y] = '|';  // Línea vertical
+                verificar = true;
             }
             else {
                 mat[x][y] = '-';  // Línea horizontal
+                verificar = true;
             }
         }
         else {
-            cout << "No se puede agregar la línea en los vértices o centro" << endl;
+            //cout << "No se puede agregar la linea en los vertices, centro o zonas repetidas" << endl;
         }
     }
     else
-        cout << "Fuera de Rango" << endl;
+        //cout << "Fuera de Rango" << endl;
+    return verificar;
 }
 
 string TableroJuego::toString() {

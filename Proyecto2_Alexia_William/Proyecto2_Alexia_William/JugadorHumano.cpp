@@ -20,7 +20,7 @@ string JugadorHumano::getNombreJugador()
     return nombre;
 }
 
-char JugadorHumano::getInical()
+char JugadorHumano::getInicial()
 {
 	if (nombre[0] == 'C') {
 		return 'c';
@@ -39,9 +39,4 @@ string JugadorHumano::toString() const
 	stringstream s;
 	s << "\t Nombre del Jugador: " << nombre << endl <<endl;
 	return s.str();
-}
-
-void JugadorHumano::getestrategia()
-{
-
 }

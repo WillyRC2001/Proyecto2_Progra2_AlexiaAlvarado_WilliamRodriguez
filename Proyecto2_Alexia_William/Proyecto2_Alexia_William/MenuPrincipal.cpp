@@ -25,7 +25,7 @@ void MenuPrincipal::OpcionIniciar() {
 	TableroJuego* tablero = new TableroJuego();
 	Jugador* jug1 = NULL;
 	Jugador* jug2 = NULL;
-	string nom;
+	JugadorComputadora* jug3 = NULL;
 	int opJugador;
 	cout << "Elige la modalidad: " << endl;
 	cout << "[1] Jugador vs Jugador" << endl;
@@ -43,6 +43,7 @@ void MenuPrincipal::OpcionIniciar() {
 		cout << "Jugador 1" << endl;
 		jug1 = MenuPrincipal::crearJugador();
 		jug2 = NULL;
+		jug3 = new JugadorComputadora();
 		break;
 	}//Fin del switch
 	cout << "Creando El Tablero de Juego..." << endl;
@@ -55,14 +56,14 @@ void MenuPrincipal::OpcionIniciar() {
 	int fila;
 	int columna;
 	if (jug2 != NULL) {	//Juego de JvsJ
-		do {	//IMPORTANTE Arreglar
+		do {
 			Jugada* jugadaReglas = new Jugada(NULL);	//Para mostrar las reglas
 			jugadaReglas->MostrarReglas();
 			cout << endl << endl;
 			cout << juego->MostrarTablero() << endl;
 			cout << "==============TURNO JUGADOR 1==============" << endl;
 			cout << "Digite la fila: "; cin >> fila;
-			cout << "digite la columna:"; cin >> columna;
+			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug1, fila, columna);
 			system("cls");
 			jugadaReglas->MostrarReglas();
@@ -70,23 +71,47 @@ void MenuPrincipal::OpcionIniciar() {
 			cout << juego->MostrarTablero() << endl;
 			cout << "==============TURNO JUGADOR 2==============" << endl;
 			cout << "Digite la fila: "; cin >> fila;
-			cout << "digite la columna:"; cin >> columna;
+			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug2, fila, columna);
 			system("cls");
 			delete jugadaReglas;
 		} while (juego->HayJugada() != false);
+		//Fin del juego JvsJ, Revisando quien es el ganador
+		cout << juego->MostrarTablero() << endl;
+		if (jug1->getPuntos() > jug2->getPuntos()) {
+			cout << "Ganador es: " << jug1->getNombreJugador() << "!!!!!" << endl;
+		}
+		else {
+			cout << "Ganador es: " << jug2->getNombreJugador() << "!!!!!" << endl;
+		}
 	}
 	else {		//Juego JvsPC
-		cout << "Jugador vs Computadora, proximamente...." << endl;
-		//Aqui vendría todo el proceso del juego contra la computadora4
+		//cout << "Jugador vs Computadora, proximamente...." << endl;
+		//Aqui vendría todo el proceso del juego contra la computadora
+		cout << jug3->getPuntos() << endl;;
+		do {
+			Jugada* jugadaReglas = new Jugada(NULL);	//Para mostrar las reglas
+			jugadaReglas->MostrarReglas();
+			cout << endl << endl;
+			cout << juego->MostrarTablero() << endl;
+			cout << "==============TURNO JUGADOR==============" << endl;
+			cout << "Digite la fila: "; cin >> fila;
+			cout << "Digite la columna:"; cin >> columna;
+			juego->HacerJugada(jug1, fila, columna);
+			juego->HacerJugadaCompu(jug3, fila, columna);
+			system("cls");
+			delete jugadaReglas;
+		} while (juego->HayJugada() != false);
+		//Fin del juego JvsJ, Revisando quien es el ganador
+		cout << juego->MostrarTablero() << endl;
+		if (jug1->getPuntos() > jug3->getPuntos()) {
+			cout << "Ganador es: " << jug1->getNombreJugador() << "!!!!!" << endl;
+		}
+		else {
+			cout << "Ganador es: " << jug3->getNombreJugador() << "!!!!!" << endl;
+		}
 	}
-	//Fin del juego, Revisando quien es el ganador
-	if (jug1->getPuntos() > jug2->getPuntos()) {
-		cout << "Ganador es: " << jug1->getNombreJugador() << "!!!!!" << endl;
-	}
-	else {
-		cout << "Ganador es: " << jug2->getNombreJugador() << "!!!!!" << endl;
-	}
+	
 	system("pause");
 	system("cls");
 	//MenuPrincipal::menuPrincipal(); //En teoria esto lo devolvería al menu principal una vez que ya terminó la partida

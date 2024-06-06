@@ -4,11 +4,12 @@ EstrategiaAleatoria::EstrategiaAleatoria() : Estrategia() {
 }
 EstrategiaAleatoria::~EstrategiaAleatoria() {}
 int EstrategiaAleatoria::getFila() {
-	int fila = rand() % 20;
-	return fila;
+	int f = rand() % 20;
+	return f;
 }
 int EstrategiaAleatoria::getColumna() {
-	int columna = rand() % 20;
-	return columna;
+	int c = rand() % 20;
+	return c;
 }
+
 //void EstrategiaAleatoria::dumb(){}

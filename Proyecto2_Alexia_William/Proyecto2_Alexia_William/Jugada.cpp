@@ -34,14 +34,16 @@ void Jugada::AgregarLinea(int f,int c, TableroJuego* tableroJugada)
 void Jugada::AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tableroJugada, int f, int c)
 {
 	//int tipo = rand() % 5 + 1;	//(de 1 a 5)
-	int tipo = 1;
+	int tipo = 4;
 	bool verificar;
+	int fila;
+	int columna;
 	switch (tipo) {
 	case 1:
 		jugadorPC->estrategiaAleatoria();
 		do {
-			int fila = jugadorPC->getestrategia()->getFila();
-			int columna = jugadorPC->getestrategia()->getColumna();
+			fila = jugadorPC->getestrategia()->getFila();
+			columna = jugadorPC->getestrategia()->getColumna();
 			verificar = tableroJugada->SetLineaCelda(fila, columna);
 		}while(verificar != true);
 		if (tableroJugada->CasillaLlena(jugadorPC->getInicial()) == true) {
@@ -49,5 +51,38 @@ void Jugada::AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tabl
 			jugadorPC->setPuntos(sumarPuntos);
 		}
 		break;
-	}
+	case 2:
+		jugadorPC->estrategiaCercano();
+		jugadorPC->getestrategia()->buscarCerca(f,c,tableroJugada);
+		fila = jugadorPC->getestrategia()->getFila();
+		columna = jugadorPC->getestrategia()->getColumna();
+		tableroJugada->SetLineaCelda(fila, columna);
+		if (tableroJugada->CasillaLlena(jugadorPC->getInicial()) == true) {
+			int sumarPuntos = jugadorPC->getPuntos() + 1;
+			jugadorPC->setPuntos(sumarPuntos);
+		}
+		break;
+	case 3:
+		jugadorPC->estrategiaCentral();
+		do {
+			fila = jugadorPC->getestrategia()->getFila();
+			columna = jugadorPC->getestrategia()->getColumna();
+			verificar = tableroJugada->SetLineaCelda(fila, columna);
+		} while (verificar != true);
+		if (tableroJugada->CasillaLlena(jugadorPC->getInicial()) == true) {
+			int sumarPuntos = jugadorPC->getPuntos() + 1;
+			jugadorPC->setPuntos(sumarPuntos);
+		}
+	case 4:
+		jugadorPC->estrategiaPeriferico();
+		jugadorPC->getestrategia()->buscarPeriferico(tableroJugada);
+		fila = jugadorPC->getestrategia()->getFila();
+		columna = jugadorPC->getestrategia()->getColumna();
+		tableroJugada->SetLineaCelda(fila, columna);
+		if (tableroJugada->CasillaLlena(jugadorPC->getInicial()) == true) {
+			int sumarPuntos = jugadorPC->getPuntos() + 1;
+			jugadorPC->setPuntos(sumarPuntos);
+		}
+		break;
+	}//Fin del switch
 }

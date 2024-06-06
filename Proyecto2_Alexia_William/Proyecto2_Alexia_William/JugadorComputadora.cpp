@@ -32,18 +32,18 @@ void JugadorComputadora::estrategiaAleatoria(){
 	delete this->estrategia;
 	this->estrategia = new EstrategiaAleatoria();
 }
-//void JugadorComputadora::estrategiaCercano(){
-//	delete this->estrategia;
-//	this->estrategia = new EstrategiaCercano();
-//}
-//void JugadorComputadora::estrategiaPeriferico(){
-//	delete this->estrategia;
-//	this->estrategia = new EstrategiaPeriferico();
-//}
-//void JugadorComputadora::estrategiaCentral(){
-//	delete this->estrategia;
-//	this->estrategia = new EstrategiaCentral();
-//}
+void JugadorComputadora::estrategiaCercano(){
+	delete this->estrategia;
+	this->estrategia = new EstrategiaCercano();
+}
+void JugadorComputadora::estrategiaPeriferico(){
+	delete this->estrategia;
+	this->estrategia = new EstrategiaPeriferico();
+}
+void JugadorComputadora::estrategiaCentral(){
+	delete this->estrategia;
+	this->estrategia = new EstrategiaCentral();
+}
 //void JugadorComputadora::estrategiaIslas(){
 //	delete this->estrategia;
 //	this->estrategia = new EstrategiaIslas();

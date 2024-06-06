@@ -22,16 +22,16 @@ bool TableroJuego::Vacio(int x, int y) {
     return (mat[x][y] != '|' && mat[x][y] != '-');
 }
 
-string TableroJuego::GetValorCelda(int x, int y) {
+char TableroJuego::GetValorCelda(int x, int y) {
     if (x < 0 || x >= filas || y < 0 || y >= columnas) {
         throw out_of_range("Posicion fuera del tablero habilitado...");
     }
     else {
-        return &mat[x][y];
+        return mat[x][y];
     }
 }
 bool TableroJuego::SetLineaCelda(int x, int y) {
-    bool verificar = false;
+    bool verificar;
     if (x < 0 || x >= filas || y < 0 || y >= columnas) {
         throw out_of_range("Posición fuera del tablero habilitado...");
     }
@@ -49,10 +49,12 @@ bool TableroJuego::SetLineaCelda(int x, int y) {
             }
         }
         else {
+            verificar = false;
             //cout << "No se puede agregar la linea en los vertices, centro o zonas repetidas" << endl;
         }
     }
     else
+        verificar = false;
         //cout << "Fuera de Rango" << endl;
     return verificar;
 }

@@ -1,17 +1,46 @@
 #pragma once
 #include "Estrategia.h"
-#include "Tableros.h"
 
 class EstrategiaCercano : public Estrategia {
 private:
-
-	//TableroJuego* tablero;
+	//TableroJuego* tablero = NULL;
 	//bool buscarCerca(TableroJuego* tablero, int& fila, int& columna);
 
 public:
 	EstrategiaCercano();
 	virtual ~EstrategiaCercano();
-	//int getFila(/*TableroJuego* tablero*/);
-	//int getColumna(/*TableroJuego* tablero*/);
+	void buscarCerca(int f, int c, TableroJuego* tab) {
+		if (tab->GetValorCelda(f-1, c-1) == ' ') {
+			fila = f - 1;
+			columna = c - 1;
+		}
+		else {
+			if (tab->GetValorCelda(f - 1, c + 1) == ' ') {
+				fila = f - 1;
+				columna = c + 1;
+			}
+			else {
+				if (tab->GetValorCelda(f + 1, c + 1) == ' ') {
+					fila = f + 1;
+					columna = c + 1;
+				}
+				else {
+					if (tab->GetValorCelda(f + 1, c - 1) == ' ') {
+						fila = f + 1;
+						columna = c - 1;
+					}
+				}
+			}
+		}
+	}
+
+	int getFila() {
+		return fila;
+	}
+	int getColumna() {
+		return columna;
+	}
+	//Metodos Basura (Pero NO BORRAR)
+	bool buscarPeriferico(TableroJuego* tab) { return false; }
 	//void dumb();
 };

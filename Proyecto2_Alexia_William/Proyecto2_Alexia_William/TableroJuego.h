@@ -12,7 +12,7 @@ public:
     TableroJuego();
     virtual ~TableroJuego();
     bool Vacio(int x, int y);
-    string GetValorCelda(int x, int y);
+    char GetValorCelda(int x, int y);
     bool SetLineaCelda(int x, int y);
     //void activandoMatriz(TableroCompuesto* vec);
     void ActivarMatriz(TableroCompuesto* vec);

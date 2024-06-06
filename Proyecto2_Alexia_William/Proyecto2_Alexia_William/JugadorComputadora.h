@@ -16,10 +16,10 @@ public:
 	virtual int getPuntos();
 	virtual void setPuntos(int);
 	virtual void estrategiaAleatoria();
-	/*virtual void estrategiaCercano();
+	virtual void estrategiaCercano();
 	virtual void estrategiaPeriferico();
 	virtual void estrategiaCentral();
-	virtual void estrategiaIslas();*/
+	//virtual void estrategiaIslas();
 	virtual void setNombreJugador(string);
 	virtual void aumentarPuntos();
 

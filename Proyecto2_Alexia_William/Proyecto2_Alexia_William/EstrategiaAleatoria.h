@@ -7,5 +7,8 @@ public:
 	virtual ~EstrategiaAleatoria();
 	int getFila();
 	int getColumna();
+	//Metodos Basura (Pero NO BORRAR)
+	void buscarCerca(int f, int c, TableroJuego* tab) {}
+	bool buscarPeriferico(TableroJuego* tab) { return false; }
 	//void dumb();
 };

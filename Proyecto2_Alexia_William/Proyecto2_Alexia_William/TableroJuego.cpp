@@ -150,3 +150,13 @@ bool TableroJuego::HayEspacios()
     }
     return espacio;
 }
+
+int TableroJuego::AnchuraColumnas() const
+{
+    return 0;
+}
+
+int TableroJuego::AlturaFilas() const
+{
+    return 0;
+}

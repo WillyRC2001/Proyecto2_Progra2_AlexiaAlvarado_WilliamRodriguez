@@ -1,7 +1,6 @@
 #pragma once
 #include "Jugador.h"
-#include "Estrategia.h"
-#include "EstrategiaAleatoria.h"
+#include "Estrategias.h"
 
 class JugadorComputadora : public Jugador {
 private: 
@@ -17,10 +16,10 @@ public:
 	virtual int getPuntos();
 	virtual void setPuntos(int);
 	virtual void estrategiaAleatoria();
-	//virtual void estrategiaCercano();
-	//virtual void estrategiaPeriferico();
-	//virtual void estrategiaCentral();
-	//virtual void estrategiaIslas();
+	/*virtual void estrategiaCercano();
+	virtual void estrategiaPeriferico();
+	virtual void estrategiaCentral();
+	virtual void estrategiaIslas();*/
 	virtual void setNombreJugador(string);
 	virtual void aumentarPuntos();
 

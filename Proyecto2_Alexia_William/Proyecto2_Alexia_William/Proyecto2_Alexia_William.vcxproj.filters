@@ -52,6 +52,9 @@
     <Filter Include="Archivos de origen\Excepciones_CPP">
       <UniqueIdentifier>{e6f4d5c5-0e38-4fab-8f3f-0044adb40bb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Estrategia_CPP">
+      <UniqueIdentifier>{753ae49b-b730-429c-8486-9ff70770c974}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TableroCompuesto.cpp">
@@ -101,6 +104,21 @@
     </ClCompile>
     <ClCompile Include="JugadorComputadora.cpp">
       <Filter>Archivos de origen\Jugador_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EstrategiaAleatoria.cpp">
+      <Filter>Archivos de origen\Estrategia_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EstrategiaCentral.cpp">
+      <Filter>Archivos de origen\Estrategia_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EstrategiaCercano.cpp">
+      <Filter>Archivos de origen\Estrategia_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EstrategiaIslas.cpp">
+      <Filter>Archivos de origen\Estrategia_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EstrategiaPeriferico.cpp">
+      <Filter>Archivos de origen\Estrategia_CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +192,21 @@
       <Filter>Archivos de encabezado\Interfaz_H</Filter>
     </ClInclude>
     <ClInclude Include="EstrategiaAleatoria.h">
+      <Filter>Archivos de encabezado\Estrategia_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Estrategias.h">
+      <Filter>Archivos de encabezado\ClasePequeñas</Filter>
+    </ClInclude>
+    <ClInclude Include="EstrategiaCercano.h">
+      <Filter>Archivos de encabezado\Estrategia_H</Filter>
+    </ClInclude>
+    <ClInclude Include="EstrategiaPeriferico.h">
+      <Filter>Archivos de encabezado\Estrategia_H</Filter>
+    </ClInclude>
+    <ClInclude Include="EstrategiaCentral.h">
+      <Filter>Archivos de encabezado\Estrategia_H</Filter>
+    </ClInclude>
+    <ClInclude Include="EstrategiaIslas.h">
       <Filter>Archivos de encabezado\Estrategia_H</Filter>
     </ClInclude>
   </ItemGroup>

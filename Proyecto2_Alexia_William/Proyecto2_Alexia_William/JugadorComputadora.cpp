@@ -44,9 +44,9 @@ void JugadorComputadora::estrategiaCentral(){
 	delete this->estrategia;
 	this->estrategia = new EstrategiaCentral();
 }
-//void JugadorComputadora::estrategiaIslas(){
-//	delete this->estrategia;
-//	this->estrategia = new EstrategiaIslas();
-//}
+void JugadorComputadora::estrategiaIslas(){
+	delete this->estrategia;
+	this->estrategia = new EstrategiaIslas();
+}
 
 

@@ -20,4 +20,6 @@ public:
 	virtual void buscarCerca(int fila, int columna, TableroJuego* tab) = 0;
 	//Metodo para periferico
 	virtual bool buscarPeriferico(TableroJuego* tab) = 0;
+	//Metodo para islas
+	virtual void aplicarEstrategia(TableroJuego* tab) = 0;
 };

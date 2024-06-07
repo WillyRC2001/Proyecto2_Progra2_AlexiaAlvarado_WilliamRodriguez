@@ -42,5 +42,6 @@ public:
 	}
 	//Metodos Basura (Pero NO BORRAR)
 	bool buscarPeriferico(TableroJuego* tab) { return false; }
+	void aplicarEstrategia(TableroJuego* tab){}
 	//void dumb();
 };

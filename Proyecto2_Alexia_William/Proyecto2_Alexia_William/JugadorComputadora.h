@@ -19,7 +19,7 @@ public:
 	virtual void estrategiaCercano();
 	virtual void estrategiaPeriferico();
 	virtual void estrategiaCentral();
-	//virtual void estrategiaIslas();
+	virtual void estrategiaIslas();
 	virtual void setNombreJugador(string);
 	virtual void aumentarPuntos();
 

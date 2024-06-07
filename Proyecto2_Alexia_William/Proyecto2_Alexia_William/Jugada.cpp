@@ -84,5 +84,16 @@ void Jugada::AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tabl
 			jugadorPC->setPuntos(sumarPuntos);
 		}
 		break;
+	case 5:
+		jugadorPC->estrategiaIslas();
+		jugadorPC->getestrategia()->aplicarEstrategia(tableroJugada);
+		fila = jugadorPC->getestrategia()->getFila();
+		columna = jugadorPC->getestrategia()->getColumna();
+		tableroJugada->SetLineaCelda(fila, columna);
+		if (tableroJugada->CasillaLlena(jugadorPC->getInicial()) == true) {
+			int sumarPuntos = jugadorPC->getPuntos() + 1;
+			jugadorPC->setPuntos(sumarPuntos);
+		}
+		break;
 	}//Fin del switch
 }

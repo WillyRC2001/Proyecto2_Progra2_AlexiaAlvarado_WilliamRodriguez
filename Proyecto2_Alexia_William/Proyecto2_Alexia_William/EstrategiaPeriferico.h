@@ -56,5 +56,6 @@ public:
 
 	//Metodos Basura (Pero NO BORRAR)
 	void buscarCerca(int f, int c, TableroJuego* tab) {}
+	void aplicarEstrategia(TableroJuego* tab){}
 	//void dumb();
 };

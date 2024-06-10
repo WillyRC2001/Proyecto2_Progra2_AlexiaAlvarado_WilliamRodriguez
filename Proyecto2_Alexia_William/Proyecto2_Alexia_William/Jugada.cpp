@@ -33,8 +33,8 @@ void Jugada::AgregarLinea(int f,int c, TableroJuego* tableroJugada)
 }
 void Jugada::AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tableroJugada, int f, int c)
 {
-	//int tipo = rand() % 5 + 1;	//(de 1 a 5)
-	int tipo = 4;
+	
+	int tipo = 5;
 	bool verificar;
 	int fila;
 	int columna;

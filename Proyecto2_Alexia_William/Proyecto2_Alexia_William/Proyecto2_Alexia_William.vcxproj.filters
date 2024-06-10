@@ -55,6 +55,12 @@
     <Filter Include="Archivos de origen\Estrategia_CPP">
       <UniqueIdentifier>{753ae49b-b730-429c-8486-9ff70770c974}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Archivos_H">
+      <UniqueIdentifier>{4d14b12d-3788-4995-bc8a-0d167d373fa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Archivos_CPP">
+      <UniqueIdentifier>{a866ef5a-b00a-42cd-95cb-af3e0585ee97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TableroCompuesto.cpp">
@@ -119,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="EstrategiaPeriferico.cpp">
       <Filter>Archivos de origen\Estrategia_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Guarda.cpp">
+      <Filter>Archivos de origen\Archivos_CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,9 +194,6 @@
     <ClInclude Include="Juego.h">
       <Filter>Archivos de encabezado\Interfaz_H</Filter>
     </ClInclude>
-    <ClInclude Include="Controler.h">
-      <Filter>Archivos de encabezado\Interfaz_H</Filter>
-    </ClInclude>
     <ClInclude Include="MenuPrincipal.h">
       <Filter>Archivos de encabezado\Interfaz_H</Filter>
     </ClInclude>
@@ -208,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="EstrategiaIslas.h">
       <Filter>Archivos de encabezado\Estrategia_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Guarda.h">
+      <Filter>Archivos de encabezado\Archivos_H</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

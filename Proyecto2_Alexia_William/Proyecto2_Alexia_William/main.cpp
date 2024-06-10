@@ -2,6 +2,7 @@
 #include "MenuPrincipal.h"
 
 int main() {
+	MenuPrincipal menu;  // Crear una instancia de MenuPrincipal
 	MenuPrincipal::Bienvenida();
 	system("pause");
 	system("cls");
@@ -11,7 +12,7 @@ int main() {
 		system("cls");
 		switch (op) {
 		case 1:
-			MenuPrincipal::OpcionIniciar();
+			MenuPrincipal::OpcionIniciar(&menu);
 			break;
 		case 2:
 			MenuPrincipal::OpcionEnQueConsi();

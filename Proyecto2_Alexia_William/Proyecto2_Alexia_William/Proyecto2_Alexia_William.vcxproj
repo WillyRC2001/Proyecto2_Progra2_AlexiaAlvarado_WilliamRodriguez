@@ -133,6 +133,7 @@
     <ClCompile Include="EstrategiaIslas.cpp" />
     <ClCompile Include="EstrategiaPeriferico.cpp" />
     <ClCompile Include="ExcepcionFueraRango.cpp" />
+    <ClCompile Include="Guarda.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Jugada.cpp" />
     <ClCompile Include="Jugador.cpp" />
@@ -151,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClasesUtiles.h" />
-    <ClInclude Include="Controler.h" />
     <ClInclude Include="Estrategia.h" />
     <ClInclude Include="EstrategiaAleatoria.h" />
     <ClInclude Include="EstrategiaCentral.h" />
@@ -162,6 +162,7 @@
     <ClInclude Include="Excepcion.h" />
     <ClInclude Include="Excepciones_H.h" />
     <ClInclude Include="ExcepcionFueraRango.h" />
+    <ClInclude Include="Guarda.h" />
     <ClInclude Include="Juego.h" />
     <ClInclude Include="Jugada.h" />
     <ClInclude Include="Jugador.h" />

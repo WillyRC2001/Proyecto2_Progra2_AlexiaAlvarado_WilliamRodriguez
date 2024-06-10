@@ -1,16 +1,21 @@
 #include "MenuPrincipal.h"
 
+MenuPrincipal::MenuPrincipal()
+{
+	tableroJuego = new TableroJuego();
+	guardado = new Guarda();
+	guardado->recuperaImportante();  //recupero el contador
+}
+
 int MenuPrincipal::menuPrincipal()
 {
 	int op = 0;
 	cout << "----> Menu principal <----" << endl;
-	/*cout << "[1] Continuar" << '\t';
-	cout << "[2] Estrategias" << '\t';
-	cout << "[3] Ver jugador" << '\t';
-	cout << "[4] Salir" << endl;*/
 	cout << "[1] Iniciar" << '\t';
 	cout << "[2] En Que Consiste El Juego?" << '\t';
-	cout << "[3] Salir" << endl;
+	cout << "[3] Recuperar Jugada anterior" << '\t';
+	cout << "[4] Salir" << endl;
+	cout << endl << "Ingrese la opcion: " << endl;
 	cin >> op;
 	if (cin.fail() || op <= 0) {
 		cin.clear();
@@ -19,7 +24,7 @@ int MenuPrincipal::menuPrincipal()
 	return op;
 }
 
-void MenuPrincipal::OpcionIniciar() {
+void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 	Juego* juego;
 	TableroCompuesto* compuesto;
 	TableroJuego* tablero = new TableroJuego();
@@ -30,6 +35,7 @@ void MenuPrincipal::OpcionIniciar() {
 	cout << "Elige la modalidad: " << endl;
 	cout << "[1] Jugador vs Jugador" << endl;
 	cout << "[2] Jugador vs Computadora" << endl;
+	cout << endl << "Ingrese la opcion: " << endl;
 	cin >> opJugador;
 	system("cls");
 	switch (opJugador) {
@@ -46,6 +52,7 @@ void MenuPrincipal::OpcionIniciar() {
 		jug3 = new JugadorComputadora();
 		break;
 	}//Fin del switch
+
 	cout << "Creando El Tablero de Juego..." << endl;
 	compuesto = MenuPrincipal::creartablero();
 	tablero->ActivarMatriz(compuesto);
@@ -86,7 +93,7 @@ void MenuPrincipal::OpcionIniciar() {
 		}
 	}
 	else {		//Juego JvsPC
-		//cout << "Jugador vs Computadora, proximamente...." << endl;
+		cout << "Jugador vs Computadora, proximamente...." << endl;
 		//Aqui vendría todo el proceso del juego contra la computadora
 		cout << jug3->getPuntos() << endl;;
 		do {
@@ -111,10 +118,19 @@ void MenuPrincipal::OpcionIniciar() {
 			cout << "Ganador es: " << jug3->getNombreJugador() << "!!!!!" << endl;
 		}
 	}
-	
+
+		// Guardar la jugada
+	instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
+	if (jug2 != NULL) {
+		instancia->guardado->guardaJugada(jug2->getNombreJugador(), fila, columna, jug2->getPuntos());
+	}
+	else {
+		instancia->guardado->guardaJugada(jug3->getNombreJugador(), fila, columna, jug3->getPuntos());
+	}
+
 	system("pause");
 	system("cls");
-	//MenuPrincipal::menuPrincipal(); //En teoria esto lo devolvería al menu principal una vez que ya terminó la partida
+	MenuPrincipal::menuPrincipal(); //En teoria esto lo devolvería al menu principal una vez que ya terminó la partida
 }
 void MenuPrincipal::OpcionEnQueConsi(){
 	cout << "================En Que Consiste El Juego?===============" << endl;
@@ -198,6 +214,26 @@ void MenuPrincipal::JugadaJugador(Juego* juego, int fila, int columna, Jugador* 
 	juego->HacerJugada(jug, fila, columna);
 }
 
+int MenuPrincipal::estrategiasComputadora()
+{
+	int opcion=0;
+	cout << "-------Seleccion Modo de Juego-------" << endl;
+	cout << " Seleccione el modo de juego de la computadora :" << endl;
+	cout << endl;
+	cout << " [1] Estrategia Aleatorio" << endl;
+	cout << " [2] Estrategia Cercano" << endl;
+	cout << " [3] Estrategia Central" << endl;
+	cout << " [4] Estrategia Pereferico" << endl;
+	cout << " [5] Estrategia Islas" << endl;
+	cout << endl;
+	cout << " Ingrese su opcion: ";
+	while (opcion!=5) {
+		cout << " opcion invalida" << endl;
+		cout << " Ingrese su opcion: ";
+	}
+	return opcion;
+}
+
 
 void MenuPrincipal::excepcionRango(Excepcion* e)
 {
@@ -229,5 +265,11 @@ void MenuPrincipal::compronarDouble(double entero)
 
 void MenuPrincipal::Bienvenida()
 {
-	cout << "----> Bienvenida <----" << endl;
+	cout << "----> Bienvenidos <----" << endl;
+	cout << "Juego Dots and Boxes" << endl; 
+	cout << "Proyecto #2 Programacion 2 " << endl;
+}
+
+void MenuPrincipal::recuperarJugadas(MenuPrincipal* instancia) {
+	instancia->guardado->recuperaJugadas();
 }

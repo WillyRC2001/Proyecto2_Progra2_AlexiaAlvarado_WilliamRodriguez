@@ -1,25 +1,4 @@
-﻿  EstrategiaAleatoria.cpp
-  EstrategiaCentral.cpp
-  EstrategiaCercano.cpp
-  EstrategiaIslas.cpp
-  EstrategiaPeriferico.cpp
-  ExcepcionFueraRango.cpp
-  Juego.cpp
-  Jugada.cpp
-  Jugador.cpp
-  JugadorComputadora.cpp
-  JugadorHumano.cpp
+﻿  MenuPrincipal.cpp
   main.cpp
-  MenuPrincipal.cpp
-  ObjetoBase.cpp
-  Punto.cpp
-  Reglas.cpp
-  Tablero3X3.cpp
-  Tablero3X4.cpp
-  Tablero3X5.cpp
-  TableroCompuesto.cpp
-  Generando código...
-  Compilando...
-  TableroJuego.cpp
   Generando código...
   Proyecto2_Alexia_William.vcxproj -> C:\Users\Usuario\Documents\PROGRA 2\Proyecto2_Progra2_AlexiaAlvarado_WilliamRodriguez\Proyecto2_Alexia_William\x64\Debug\Proyecto2_Alexia_William.exe

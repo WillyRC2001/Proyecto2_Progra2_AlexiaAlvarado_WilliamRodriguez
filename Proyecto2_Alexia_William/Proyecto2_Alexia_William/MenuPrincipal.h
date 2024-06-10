@@ -1,13 +1,21 @@
 #pragma once
 #include"Juego.h"
+#include "Guarda.h"
 #include "Excepciones_H.h"
-class MenuPrincipal
+class MenuPrincipal //controladora del juego
 {
+private: 
+	TableroJuego* tableroJuego;
+	Guarda* guardado;
+	Juego* juego;
 public:
+
+	MenuPrincipal();
+	
 	//Principal
 	static int menuPrincipal();
 	//Menus Secundarios
-	static void OpcionIniciar();
+	static void OpcionIniciar(MenuPrincipal* instancia);
 	static void OpcionEnQueConsi();
 	static void	OpcionSalir();
 	/*Tablero*/
@@ -15,14 +23,17 @@ public:
 	/*Jugador*/
 	static Jugador* crearJugador();
 	/*Jugada*/
-	static void MostrarReglas();
-	static void JugadaJugador(Juego* juego, int fila, int columna, Jugador* jug);
+	 static void MostrarReglas();
+	 static void JugadaJugador(Juego* juego, int fila, int columna, Jugador* jug);
+	 static int estrategiasComputadora();
 	//Excepciones
-	static void excepcionRango(Excepcion*);
-	static void error();
+	 static void excepcionRango(Excepcion*);
+	 static void error();
 	/*Comprobacion*/
 	static void comprobarInt(int);
-	static void compronarDouble(double);
-	static void Bienvenida();
-	//static void salir(); /*Falta*/
+	 static void compronarDouble(double);
+	 static void Bienvenida();
+	 //Archivos
+	 static void recuperarJugadas(MenuPrincipal* instancia);
+	
 };

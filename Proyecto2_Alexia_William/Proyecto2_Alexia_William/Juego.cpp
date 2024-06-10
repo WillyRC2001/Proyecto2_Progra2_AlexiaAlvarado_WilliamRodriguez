@@ -11,6 +11,21 @@ Juego::~Juego()
 {
 }
 
+Jugador* Juego::getJugador1()
+{
+	return jugador1;
+}
+
+Jugador* Juego::getJugador2()
+{
+	return jugador2;
+}
+
+TableroJuego* Juego::getCampo()
+{
+	return juego;
+}
+
 string Juego::InfoJugador_1()
 {
 	return jugador1->toString();
@@ -43,4 +58,12 @@ void Juego::HacerJugadaCompu(JugadorComputadora* jug, int f, int c)
 
 bool Juego::HayJugada() {
 	return juego->HayEspacios();
+}
+
+void Juego::guarda(string& guarda) {
+	guarda = guarda + getJugador1()->getNombreJugador() + "!";
+	guarda = guarda + getJugador1()->getInicial() + "!";
+	guarda = guarda + getJugador2()->getNombreJugador() + "!";
+	guarda = guarda + getJugador2()->getInicial() + "!";
+	guarda = guarda + getCampo()->toString() + "!";
 }

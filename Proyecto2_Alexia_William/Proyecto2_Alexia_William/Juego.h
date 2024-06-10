@@ -13,6 +13,9 @@ private:
 public:
 	Juego(Jugador* jug1, Jugador* jug2, TableroJuego* tab);
 	virtual ~Juego();
+	Jugador* getJugador1();
+	Jugador* getJugador2();
+	TableroJuego* getCampo();
 	string InfoJugador_1();
 	string InfoJugador_2();
 	string MostrarTablero();	//Usar el toString de TableroJuego
@@ -20,4 +23,5 @@ public:
 	void HacerJugadaCompu(JugadorComputadora* jug,int f,int c);
 	//void ContarPuntos();
 	bool HayJugada();
+	void guarda(string&);
 };

@@ -6,11 +6,10 @@ MenuPrincipal::MenuPrincipal()
 	guardado = new Guarda();
 	guardado->recuperaImportante();  //recupero el contador
 }
-
 int MenuPrincipal::menuPrincipal()
 {
 	int op = 0;
-	cout << "----> Menu principal <----" << endl;
+	cout << "----> Menu Principal <----" << endl;
 	cout << "[1] Iniciar" << '\t';
 	cout << "[2] En Que Consiste El Juego?" << '\t';
 	cout << "[3] Recuperar Jugada anterior" << '\t';
@@ -73,6 +72,8 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug1, fila, columna);
 			system("cls");
+			//Guardado de la jugada del Jugador 1
+			instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
 			jugadaReglas->MostrarReglas();
 			cout << endl << endl;
 			cout << juego->MostrarTablero() << endl;
@@ -80,6 +81,8 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 			cout << "Digite la fila: "; cin >> fila;
 			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug2, fila, columna);
+			//Guardado de la jugada del jugador 2
+			instancia->guardado->guardaJugada(jug2->getNombreJugador(), fila, columna, jug2->getPuntos());
 			system("cls");
 			delete jugadaReglas;
 		} while (juego->HayJugada() != false);
@@ -96,6 +99,7 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 		cout << "Jugador vs Computadora, proximamente...." << endl;
 		//Aqui vendría todo el proceso del juego contra la computadora
 		cout << jug3->getPuntos() << endl;;
+		int tipo = 0;
 		do {
 			Jugada* jugadaReglas = new Jugada(NULL);	//Para mostrar las reglas
 			jugadaReglas->MostrarReglas();
@@ -105,7 +109,12 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 			cout << "Digite la fila: "; cin >> fila;
 			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug1, fila, columna);
-			juego->HacerJugadaCompu(jug3, fila, columna);
+			//Guardado de la jugada del Jugador 1
+			instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
+			tipo = MenuPrincipal::estrategiasComputadora();
+			juego->HacerJugadaCompu(jug3, fila, columna, tipo);
+			//Guardado de la jugada de la computadora
+			instancia->guardado->guardaJugada(jug3->getNombreJugador(), fila, columna, jug3->getPuntos());
 			system("cls");
 			delete jugadaReglas;
 		} while (juego->HayJugada() != false);
@@ -119,14 +128,14 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 		}
 	}
 
-		// Guardar la jugada
-	instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
+	// Guardar la jugada
+	/*instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
 	if (jug2 != NULL) {
 		instancia->guardado->guardaJugada(jug2->getNombreJugador(), fila, columna, jug2->getPuntos());
 	}
 	else {
 		instancia->guardado->guardaJugada(jug3->getNombreJugador(), fila, columna, jug3->getPuntos());
-	}
+	}*/
 
 	system("pause");
 	system("cls");
@@ -145,6 +154,9 @@ void MenuPrincipal::OpcionEnQueConsi(){
 	cout << "2 | A |    " << endl;
 	cout << "3 + - +   +" << endl;
 	cout << endl;
+}
+void MenuPrincipal::OpcionRecuperarJugada() {
+	//Aqui esta el metodo para recuperar la jugada anterior
 }
 void MenuPrincipal::OpcionSalir()
 {
@@ -216,21 +228,21 @@ void MenuPrincipal::JugadaJugador(Juego* juego, int fila, int columna, Jugador* 
 
 int MenuPrincipal::estrategiasComputadora()
 {
-	int opcion=0;
-	cout << "-------Seleccion Modo de Juego-------" << endl;
-	cout << " Seleccione el modo de juego de la computadora :" << endl;
-	cout << endl;
-	cout << " [1] Estrategia Aleatorio" << endl;
-	cout << " [2] Estrategia Cercano" << endl;
-	cout << " [3] Estrategia Central" << endl;
-	cout << " [4] Estrategia Pereferico" << endl;
-	cout << " [5] Estrategia Islas" << endl;
-	cout << endl;
-	cout << " Ingrese su opcion: ";
-	while (opcion!=5) {
-		cout << " opcion invalida" << endl;
+	int opcion= 0;
+	do {
+		system("cls");
+		cout << "-------Seleccion Modo de Juego-------" << endl;
+		cout << " Seleccione el modo de juego de la computadora :" << endl;
+		cout << endl;
+		cout << " [1] Estrategia Aleatorio" << endl;
+		cout << " [2] Estrategia Cercano" << endl;
+		cout << " [3] Estrategia Central" << endl;
+		cout << " [4] Estrategia Pereferico" << endl;
+		cout << " [5] Estrategia Islas" << endl;
+		cout << endl;
 		cout << " Ingrese su opcion: ";
-	}
+		cin >> opcion;
+	} while (opcion > 5 || opcion <= 0);
 	return opcion;
 }
 

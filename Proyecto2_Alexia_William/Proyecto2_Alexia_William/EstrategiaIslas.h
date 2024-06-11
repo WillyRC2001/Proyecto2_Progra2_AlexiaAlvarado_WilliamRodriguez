@@ -3,8 +3,6 @@
 
 class EstrategiaIslas : public Estrategia {
 protected:
-    int fila;
-    int columna;
     int estado;
 
     // Metodo para realizar el siguiente movimiento en la secuencia de formación de una isla
@@ -53,20 +51,11 @@ protected:
     }
 
 public:
-    EstrategiaIslas():Estrategia() {}
-
-    virtual ~EstrategiaIslas(){}
-
-    int getFila() { return fila; }
-    int getColumna() { return columna; }
-
-    void aplicarEstrategia(TableroJuego* tab) {
-        if (!siguienteMovimiento(tab)) {
-            // Si no se pudo realizar el siguiente movimiento, buscar una nueva posición
-            buscarNuevaPosicion(tab);
-            siguienteMovimiento(tab);
-        }
-    }
+    EstrategiaIslas();
+    virtual ~EstrategiaIslas();
+    int getFila();
+    int getColumna();
+    void aplicarEstrategia(TableroJuego* tab);
 
     //	Metodos Basura (Pero NO BORRAR)
 	void buscarCerca(int f, int c, TableroJuego* tab) {}

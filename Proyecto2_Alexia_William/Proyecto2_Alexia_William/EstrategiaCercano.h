@@ -9,37 +9,9 @@ private:
 public:
 	EstrategiaCercano();
 	virtual ~EstrategiaCercano();
-	void buscarCerca(int f, int c, TableroJuego* tab) {
-		if (tab->GetValorCelda(f-1, c-1) == ' ') {
-			fila = f - 1;
-			columna = c - 1;
-		}
-		else {
-			if (tab->GetValorCelda(f - 1, c + 1) == ' ') {
-				fila = f - 1;
-				columna = c + 1;
-			}
-			else {
-				if (tab->GetValorCelda(f + 1, c + 1) == ' ') {
-					fila = f + 1;
-					columna = c + 1;
-				}
-				else {
-					if (tab->GetValorCelda(f + 1, c - 1) == ' ') {
-						fila = f + 1;
-						columna = c - 1;
-					}
-				}
-			}
-		}
-	}
-
-	int getFila() {
-		return fila;
-	}
-	int getColumna() {
-		return columna;
-	}
+	void buscarCerca(int f, int c, TableroJuego* tab);
+	int getFila();
+	int getColumna();
 	//Metodos Basura (Pero NO BORRAR)
 	bool buscarPeriferico(TableroJuego* tab) { return false; }
 	void aplicarEstrategia(TableroJuego* tab){}

@@ -31,10 +31,8 @@ void Jugada::AgregarLinea(int f,int c, TableroJuego* tableroJugada)
 		jugadorJugada->setPuntos(sumarPuntos);
 	}
 }
-void Jugada::AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tableroJugada, int f, int c)
+void Jugada::AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tableroJugada, int f, int c, int tipo)
 {
-	
-	int tipo = 5;
 	bool verificar;
 	int fila;
 	int columna;
@@ -73,6 +71,7 @@ void Jugada::AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tabl
 			int sumarPuntos = jugadorPC->getPuntos() + 1;
 			jugadorPC->setPuntos(sumarPuntos);
 		}
+		break;
 	case 4:
 		jugadorPC->estrategiaPeriferico();
 		jugadorPC->getestrategia()->buscarPeriferico(tableroJugada);

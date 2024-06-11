@@ -14,5 +14,5 @@ public:
 	void MostrarReglas();
 	string MostrarInfoJugador();
 	void AgregarLinea(int f, int c, TableroJuego* tableroJugada);
-	void AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tableroJugada, int f, int c);
+	void AgregarLineaCompu(JugadorComputadora* jugadorPC, TableroJuego* tableroJugada, int f, int c, int tip_estrategia);
 };

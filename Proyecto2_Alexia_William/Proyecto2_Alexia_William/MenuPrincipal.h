@@ -7,7 +7,7 @@ class MenuPrincipal //controladora del juego
 private: 
 	TableroJuego* tableroJuego;
 	Guarda* guardado;
-	Juego* juego;
+	//Juego* juego;	//Nota: El juego se esta creando dentro del metodo OpcionIniciar entonces no debería ser necesario esto
 public:
 
 	MenuPrincipal();
@@ -17,6 +17,7 @@ public:
 	//Menus Secundarios
 	static void OpcionIniciar(MenuPrincipal* instancia);
 	static void OpcionEnQueConsi();
+	static void OpcionRecuperarJugada();
 	static void	OpcionSalir();
 	/*Tablero*/
 	static TableroCompuesto* creartablero();

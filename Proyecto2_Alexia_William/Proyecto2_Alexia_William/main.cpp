@@ -3,7 +3,7 @@
 
 int main() {
 	MenuPrincipal menu;  // Crear una instancia de MenuPrincipal
-	MenuPrincipal::Bienvenida();
+	menu.Bienvenida();
 	system("pause");
 	system("cls");
 	int op;
@@ -19,12 +19,16 @@ int main() {
 			system("pause");
 			break;
 		case 3:
+			MenuPrincipal::OpcionRecuperarJugada();
+			system("pause");
+			break;
+		case 4:
 			MenuPrincipal::OpcionSalir();
 			system("pause");
 			break;
 		}
 		system("cls");
-	} while (op!=3);
+	} while (op!=4);
 	system("pause");
 	return 0;
 }

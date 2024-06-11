@@ -48,11 +48,11 @@ void Juego::HacerJugada(Jugador* jug, int f,int c)
 	jugada->AgregarLinea(f, c, juego);
 	delete jugada;
 }
-void Juego::HacerJugadaCompu(JugadorComputadora* jug, int f, int c)
+void Juego::HacerJugadaCompu(JugadorComputadora* jug, int f, int c, int tip_estrategia)
 {
 	string opreglas;
 	Jugada* jugada = new Jugada(jug);
-	jugada->AgregarLineaCompu(jug, juego, f, c);
+	jugada->AgregarLineaCompu(jug, juego, f, c, tip_estrategia);
 	delete jugada;
 }
 

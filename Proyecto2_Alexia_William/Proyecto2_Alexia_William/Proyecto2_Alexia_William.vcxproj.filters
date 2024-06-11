@@ -61,6 +61,15 @@
     <Filter Include="Archivos de origen\Archivos_CPP">
       <UniqueIdentifier>{a866ef5a-b00a-42cd-95cb-af3e0585ee97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Memento_H">
+      <UniqueIdentifier>{4c7d6248-d0b6-489c-91aa-0e5d6263251e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Iterador_H">
+      <UniqueIdentifier>{ae5f81e3-9d1c-4423-818a-774e682729e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Memento_CPP">
+      <UniqueIdentifier>{5211b11b-0d3c-46e3-be9a-26868920fe7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TableroCompuesto.cpp">
@@ -128,6 +137,12 @@
     </ClCompile>
     <ClCompile Include="Guarda.cpp">
       <Filter>Archivos de origen\Archivos_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="IterArreglo.cpp">
+      <Filter>Archivos de origen\Memento_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="RepositorioMementos.cpp">
+      <Filter>Archivos de origen\Memento_CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +232,27 @@
     </ClInclude>
     <ClInclude Include="Guarda.h">
       <Filter>Archivos de encabezado\Archivos_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Memento.h">
+      <Filter>Archivos de encabezado\Memento_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Originador.h">
+      <Filter>Archivos de encabezado\Memento_H</Filter>
+    </ClInclude>
+    <ClInclude Include="ExcepecionArchivo.h">
+      <Filter>Archivos de encabezado\Excepciones_H</Filter>
+    </ClInclude>
+    <ClInclude Include="RepositorioMementos.h">
+      <Filter>Archivos de encabezado\Memento_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterador.h">
+      <Filter>Archivos de encabezado\Iterador_H</Filter>
+    </ClInclude>
+    <ClInclude Include="IterArreglo.h">
+      <Filter>Archivos de encabezado\Iterador_H</Filter>
+    </ClInclude>
+    <ClInclude Include="Mementos.h">
+      <Filter>Archivos de encabezado\ClasePequeñas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

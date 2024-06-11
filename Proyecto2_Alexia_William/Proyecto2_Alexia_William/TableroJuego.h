@@ -2,7 +2,7 @@
 #include "ClasesUtiles.h"
 #include "TableroCompuesto.h"
 
-class TableroJuego {
+class TableroJuego:public ObjetoBase {
 private:
     char** mat;
     int filas;
@@ -22,6 +22,11 @@ public:
     bool HayEspacios();
     virtual int AnchuraColumnas() const;
     virtual int AlturaFilas() const;
-    string toString();
+    string toString() const;
+
+    friend ostream& operator << (ostream& os, const  TableroJuego& obj) {
+        os << obj.toString();
+        return os;
+    }
    
 };

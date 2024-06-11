@@ -5,6 +5,7 @@ MenuPrincipal::MenuPrincipal()
 	tableroJuego = new TableroJuego();
 	guardado = new Guarda();
 	guardado->recuperaImportante();  //recupero el contador
+	
 }
 int MenuPrincipal::menuPrincipal()
 {
@@ -25,6 +26,7 @@ int MenuPrincipal::menuPrincipal()
 
 void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 	Juego* juego;
+	juego->crearMemento();
 	TableroCompuesto* compuesto;
 	TableroJuego* tablero = new TableroJuego();
 	Jugador* jug1 = NULL;
@@ -56,6 +58,7 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 	compuesto = MenuPrincipal::creartablero();
 	tablero->ActivarMatriz(compuesto);
 	juego = new Juego(jug1, jug2, tablero);
+	juego->getMemento();
 	system("pause");
 	system("cls");
 	//A partir de aqui empieza el juego
@@ -71,9 +74,15 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 			cout << "Digite la fila: "; cin >> fila;
 			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug1, fila, columna);
+			juego->getMemento();
 			system("cls");
 			//Guardado de la jugada del Jugador 1
-			instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
+			//instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
+			juego->verMemento();
+			int opi = MenuPrincipal::GuardarPartida();
+			if (opi == 1) {
+				juego->guarda();
+			}
 			jugadaReglas->MostrarReglas();
 			cout << endl << endl;
 			cout << juego->MostrarTablero() << endl;
@@ -82,7 +91,12 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug2, fila, columna);
 			//Guardado de la jugada del jugador 2
-			instancia->guardado->guardaJugada(jug2->getNombreJugador(), fila, columna, jug2->getPuntos());
+			//instancia->guardado->guardaJugada(jug2->getNombreJugador(), fila, columna, jug2->getPuntos());
+			juego->verMemento();
+			opi = MenuPrincipal::GuardarPartida();
+			if (opi == 1) {
+				juego->guarda();
+			}
 			system("cls");
 			delete jugadaReglas;
 		} while (juego->HayJugada() != false);
@@ -110,11 +124,21 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 			cout << "Digite la columna:"; cin >> columna;
 			juego->HacerJugada(jug1, fila, columna);
 			//Guardado de la jugada del Jugador 1
-			instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
+			//instancia->guardado->guardaJugada(jug1->getNombreJugador(), fila, columna, jug1->getPuntos());
+			juego->verMemento();
+			int opi = MenuPrincipal::GuardarPartida();
+			if (opi == 1) {
+				juego->guarda();
+			}
 			tipo = MenuPrincipal::estrategiasComputadora();
 			juego->HacerJugadaCompu(jug3, fila, columna, tipo);
 			//Guardado de la jugada de la computadora
-			instancia->guardado->guardaJugada(jug3->getNombreJugador(), fila, columna, jug3->getPuntos());
+			//instancia->guardado->guardaJugada(jug3->getNombreJugador(), fila, columna, jug3->getPuntos());
+			juego->verMemento();
+			opi = MenuPrincipal::GuardarPartida();
+			if (opi == 1) {
+				juego->guarda();
+			}
 			system("cls");
 			delete jugadaReglas;
 		} while (juego->HayJugada() != false);
@@ -136,7 +160,11 @@ void MenuPrincipal::OpcionIniciar(MenuPrincipal* instancia) {
 	else {
 		instancia->guardado->guardaJugada(jug3->getNombreJugador(), fila, columna, jug3->getPuntos());
 	}*/
-
+	juego->verMemento();
+	int op = MenuPrincipal::GuardarPartida();
+	if (op == 1) {
+		juego->guarda();
+	}
 	system("pause");
 	system("cls");
 	MenuPrincipal::menuPrincipal(); //En teoria esto lo devolvería al menu principal una vez que ya terminó la partida
@@ -282,6 +310,34 @@ void MenuPrincipal::Bienvenida()
 	cout << "Proyecto #2 Programacion 2 " << endl;
 }
 
-void MenuPrincipal::recuperarJugadas(MenuPrincipal* instancia) {
-	instancia->guardado->recuperaJugadas();
+int MenuPrincipal::Archivos(int cant)
+{
+	int opcion = 0;
+	cout << " Lista de Partidas jugadas" << endl;
+	cout << endl;
+	for (int i = 1; i < cant; i++) {
+		cout << " [" << i << "] Partida " << i << endl;
+	}
+	cout << " [0] salir " << endl;
+	cout << endl;
+	cout << " Ingrese su opcion: ";
+	cin >> opcion;
+	if (cin.fail() || opcion < 0) {
+		cin.clear();
+		cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
+		throw new ExcepcionFueraRango();
+	}
+	return opcion;
+}
+
+int MenuPrincipal::GuardarPartida()
+{
+	int opcion = 0;
+	cout << "----> Guardar Patida <----" << endl;
+	cout << " [1] Si \t";
+	cout << " [2] No " << endl;
+	cout << " Ingrese su opcion: ";
+	cin >> opcion;
+	comprobarInt(opcion);
+	return opcion;
 }

@@ -59,7 +59,7 @@ bool TableroJuego::SetLineaCelda(int x, int y) {
     return verificar;
 }
 
-string TableroJuego::toString() {
+string TableroJuego::toString() const {
     stringstream s;
 
     // Agrega números de las columnas para mas estética
@@ -162,3 +162,4 @@ int TableroJuego::AlturaFilas() const
 {
     return 0;
 }
+

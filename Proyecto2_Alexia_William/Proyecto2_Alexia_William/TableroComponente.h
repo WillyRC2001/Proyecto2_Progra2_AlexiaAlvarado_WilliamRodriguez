@@ -3,6 +3,8 @@
 #include "ObjetoBase.h"
 
 class TableroComponente : public ObjetoBase{
+protected: 
+
 
 public:
 	TableroComponente()=default;

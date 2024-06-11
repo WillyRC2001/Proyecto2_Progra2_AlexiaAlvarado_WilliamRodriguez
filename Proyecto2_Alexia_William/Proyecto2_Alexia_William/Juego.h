@@ -4,12 +4,17 @@
 #include "TableroJuego.h"
 #include "Jugada.h"
 #include "Tableros.h"
+#include "Mementos.h"
+#include "Excepciones_H.h"
 
 class Juego {
 private:
 	TableroJuego* juego;
 	Jugador* jugador1;	//Jugador 1 siempre va a ser humano
 	Jugador* jugador2;	//Jugador 2 puede ser tanto humano como computadora
+	RepositorioMementos* rm;
+	Originador* org;
+	int con;
 public:
 	Juego(Jugador* jug1, Jugador* jug2, TableroJuego* tab);
 	virtual ~Juego();
@@ -23,5 +28,15 @@ public:
 	void HacerJugadaCompu(JugadorComputadora* jug,int f,int c, int tip_estrategia);
 	//void ContarPuntos();
 	bool HayJugada();
-	void guarda(string&);
+
+	/*Elementos de memento*/
+	void crearMemento();
+	void getMemento();
+	void verMemento();
+	//Archivos
+	int getCont();
+	void guarda();
+	void carga(int);
+	void guardaCont();
+	void cargaCont();
 };

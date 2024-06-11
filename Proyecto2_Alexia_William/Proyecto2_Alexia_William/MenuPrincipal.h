@@ -34,7 +34,7 @@ public:
 	static void comprobarInt(int);
 	 static void compronarDouble(double);
 	 static void Bienvenida();
-	 //Archivos
-	 static void recuperarJugadas(MenuPrincipal* instancia);
-	
+	 //Arcivos
+	 static int Archivos(int);	
+	 static int GuardarPartida();
 };

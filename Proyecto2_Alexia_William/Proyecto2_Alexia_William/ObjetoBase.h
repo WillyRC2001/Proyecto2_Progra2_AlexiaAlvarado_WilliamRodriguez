@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include "ClasesUtiles.h"
 
 class ObjetoBase {

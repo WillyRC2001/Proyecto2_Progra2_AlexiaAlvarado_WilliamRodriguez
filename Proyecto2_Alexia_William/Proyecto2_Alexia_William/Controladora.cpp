@@ -149,7 +149,7 @@ void Controladora::Jugar1vs1()
 	jugada2->setPunto(punto2);
 	do {
 		if (par % 2 == 0) {
-			juego->MostrarTablero();
+			cout << juego->MostrarTablero() << endl;
 			cout << "\nTurno de jugador: " << jugada->MostrarInfoJugador() << endl;
 			int fila = MenuPrincipal::fila();
 			int columna = MenuPrincipal::columna();
@@ -166,7 +166,7 @@ void Controladora::Jugar1vs1()
 			}
 		}
 		else {
-			juego->MostrarTablero();
+			cout << juego->MostrarTablero() << endl;
 			cout << "\nTurno de jugador: " << jugada2->MostrarInfoJugador() << endl;
 			int fila = MenuPrincipal::fila();
 			int columna = MenuPrincipal::columna();
@@ -185,7 +185,7 @@ void Controladora::Jugar1vs1()
 		system("pause");
 		system("cls");
 	} while (juego->HayJugada() == true);
-	juego->MostrarTablero();
+	cout << juego->MostrarTablero() << endl;
 	system("pause");
 	system("cls");
 	MenuPrincipal::FinalDePartida(jugador1, jugador2);
@@ -203,7 +203,7 @@ void Controladora::Jugar1vsC()
 	int fila = 0;
 	int columna = 0;
 	int resultado = 0;
-	juego->crearMemento();
+	cout << juego->MostrarTablero() << endl;
 	Jugador* jugador1 = MenuPrincipal::crearJugador();
 	Jugador* jugador2 = MenuPrincipal::crearComputadora();
 	system("pause");
@@ -222,7 +222,7 @@ void Controladora::Jugar1vsC()
 	do {
 		if (par % 2 == 0) {
 			resultado = 0;
-			juego->MostrarTablero();
+			cout << juego->MostrarTablero() << endl;
 			cout << "\nTurno de jugador: " << jugada->MostrarInfoJugador() << endl;
 			fila = MenuPrincipal::fila();
 			columna = MenuPrincipal::columna();
@@ -244,7 +244,7 @@ void Controladora::Jugar1vsC()
 		}
 		else {
 			resultado = 0;
-			juego->MostrarTablero();
+			cout << juego->MostrarTablero() << endl;
 			cout << "\nTurno de jugador: " << jugada2->MostrarInfoJugador() << endl;
 			resultado = juego->comanotarPosicion(jugada2, fila, columna);
 			if (resultado == 1) {

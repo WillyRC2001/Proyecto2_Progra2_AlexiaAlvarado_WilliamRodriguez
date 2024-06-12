@@ -186,13 +186,13 @@ int MenuPrincipal::Oponente()
 		cout << "----> Seleccion de oponente <----" << endl;
 		cout << "[1] Jugador" << '\n';
 		cout << "[2] Computadora" << '\n';
-		cout << "Ingrese la opccion: ";
+		cout << "Ingrese la opcion: ";
 		cin >> op;
 		if (cin.fail() || op < 0 || op > 2) {
 			cin.clear();
 			cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
 			pasa = false;
-			cout << "Error: Vuelva a intenar" << '\n';
+			cout << "Error: Vuelva a intentar" << '\n';
 			system("pause");
 			system("cls");
 		}
@@ -230,7 +230,7 @@ int MenuPrincipal::Cambiar()
 int MenuPrincipal::GuardarPartida()
 {
 	int opcion = 0;
-	cout << "----> Guardar Patida <----" << endl;
+	cout << "----> Guardar Partida <----" << endl;
 	cout << " [1] Si \t";
 	cout << " [2] No " << endl;
 	cout << " Ingrese su opcion: ";

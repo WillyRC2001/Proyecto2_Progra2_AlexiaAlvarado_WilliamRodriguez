@@ -124,29 +124,29 @@ bool TableroJuego::HayEspacios()
 }
 
 string TableroJuego::toString() const {
-    stringstream ss;
-    cout << "TABLERO JUGADA" << endl;
+    stringstream s;
+    s << "TABLERO JUGADA" << endl;
     // Agrega números de las columnas para más estética
-    cout << "    ";
+    s << "    ";
     for (int col = 0; col < 20; ++col) {
         if (col <= 9)
-            cout << "  " << col; // Número de la columna de 0 a 9
+            s << "  " << col; // Número de la columna de 0 a 9
         else
-            cout << " " << col; // Número de la columna de 10 a 19
+            s << " " << col; // Número de la columna de 10 a 19
     }
-    cout << endl;
+    s << endl;
 
     for (int i = 0; i < filas; i++) {
         if (i <= 9)
-            cout << "  " << i << "   "; // Número de la fila de 0 a 9
+            s << "  " << i << "   "; // Número de la fila de 0 a 9
         else
-            cout << "  " << i << "  "; // Número de la fila de 10 a 19
+            s << "  " << i << "  "; // Número de la fila de 10 a 19
         for (int j = 0; j < columnas; j++) {
-            cout << mat[i][j] << "  ";
+            s << mat[i][j] << "  ";
         }
-        cout << endl;
+        s << endl;
     }
-    return "";
+    return s.str();
 }
 
 int TableroJuego::AnchuraColumnas() const

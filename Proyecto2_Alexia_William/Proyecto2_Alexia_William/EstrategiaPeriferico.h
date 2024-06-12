@@ -8,9 +8,9 @@ public:
 	bool buscarPeriferico(TableroJuego* tab);
 	int getFila();
 	int getColumna();
+	int getTipo();
 
 	//Metodos Basura (Pero NO BORRAR)
 	void buscarCerca(int f, int c, TableroJuego* tab) {}
-	void aplicarEstrategia(TableroJuego* tab){}
-	//void dumb();
+	int posicionRandom(TableroJuego* tab, int& fila, int& columna) { return 0; }
 };

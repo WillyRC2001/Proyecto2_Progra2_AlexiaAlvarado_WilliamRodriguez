@@ -1,14 +1,9 @@
 #include "JugadorHumano.h"
 #include "Jugador.h"
 
-JugadorHumano::JugadorHumano(string nom):Jugador(nom)
-{
+JugadorHumano::JugadorHumano(string nom):Jugador(nom){}
 
-}
-
-JugadorHumano::~JugadorHumano()
-{
-}
+JugadorHumano::~JugadorHumano(){}
 
 void JugadorHumano::setNombreJugador(string name)
 {
@@ -40,3 +35,7 @@ string JugadorHumano::toString() const
 	s << "\t Nombre del Jugador: " << nombre << endl <<endl;
 	return s.str();
 }
+
+Estrategia* JugadorHumano::obtenerEstrategias() { return nullptr; }
+
+void JugadorHumano::setearEstrategias(Estrategia* estr) {}

@@ -2,6 +2,7 @@
 
 EstrategiaPeriferico::EstrategiaPeriferico()
 {
+	this->tipo = 4;
 }
 
 EstrategiaPeriferico::~EstrategiaPeriferico()
@@ -59,4 +60,9 @@ int EstrategiaPeriferico::getFila() {
 }
 int EstrategiaPeriferico::getColumna() {
 	return columna;
+}
+
+int EstrategiaPeriferico::getTipo()
+{
+	return tipo;
 }

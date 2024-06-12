@@ -18,4 +18,6 @@ public:
 	
 	// Metodos
 	virtual  string toString() const;
+	virtual Estrategia* obtenerEstrategias();
+	virtual void setearEstrategias(Estrategia*);
 };

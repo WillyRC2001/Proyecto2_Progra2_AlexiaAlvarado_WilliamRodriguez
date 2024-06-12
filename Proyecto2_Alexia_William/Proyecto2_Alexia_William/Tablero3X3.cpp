@@ -22,18 +22,13 @@ Tablero3x3::~Tablero3x3(){
 int Tablero3x3::AnchuraColumnas() const { return 7; };
 int Tablero3x3::AlturaFilas() const { return 7; };
 
-char* Tablero3x3::GetValorCelda(int f, int c){
+char* Tablero3x3::GetValorCelda(int f, int c) const {
 	if (f < 0 || f >= 7 || c < 0 || c >= 7) {
 		throw out_of_range("posicion fuera del tablero");
 	}
 	else {
 		return &tablero[f][c];
 	}
-	
-	/*if (f >= 0 && f < 7 && c >= 0 && c < 7) {
-		return string(1, tablero[f][c]);
-	}
-	return "";*/
 }
 
 void Tablero3x3::SetLineaCelda(int f, int c)
@@ -54,25 +49,12 @@ void Tablero3x3::SetLineaCelda(int f, int c)
 			}
 		}
 	}
-	/*if (f >= 0 && f < 3 && c >= 0 && c < 3) {
-		tablero[f][c] = v;
-	}*/
+	
 }
 
-bool Tablero3x3::Vacio(int f, int c){
+bool Tablero3x3::Vacio(int f, int c) const{
 	return (tablero[f][c] != '|' && tablero[f][c] != '-');
-
-	//if (tablero[f][c] != ".") /*Esta no vacio*/
-	//{
-	//	return false;
-	//}
-	//else { /*Esta  vacio*/
-	//	return true;
-	//}
-
 }
-//bool Tablero3x3::Add(TableroComponente*){}
-	//Supongo que será un metodo para agregar otro Tablero
 
 string Tablero3x3::toString() const{
 	// Agregar los números de las columnas
@@ -94,48 +76,4 @@ string Tablero3x3::toString() const{
 	}
 
 	return s.str();
-	//stringstream s;
-	//for (int i = 0; i < 7; ++i) {
-	//	for (int j = 0; j < 7; ++j) {
-	//		s << tablero[i][j] << "  ";
-	//	}
-	//	s << endl;
-	//}
-	//return s.str();
-
-	////Ciclo para agregar los numeros de las columnas
-	//s << "    ";
-	//for (int col = 0; col < columnas; ++col) {
-	//	s << "  " << col;
-	//}
-	//s << endl;
-	//for (int i = 0; i < filas; ++i) {
-	//	s << "  " << i << " "; // Número de la fila
-	//	for (int j = 0; j < columnas; ++j) {
-	//		s << "  ";
-	//		//s << (tablero[i][j].empty() ? " " : tablero[i][j]) << " ";
-	//		if (tablero[i][j] == " ") {
-	//			s << " ";
-	//		}
-	//		else {
-	//			s << tablero[i][j];
-	//		}
-	//	}
-	//	s << endl;
-	//}
-	//return s.str();
-	//stringstream s;
-	//for (int i = 0; i < 7; ++i) {
-	//	for (int j = 0; j < 7; ++j) {
-	//		//s << (tablero[i][j].empty() ? " " : tablero[i][j]) << " ";
-	//		if (tablero[i][j] == " ") {
-	//			s << " ";
-	//		}
-	//		else {
-	//			s << tablero[i][j];
-	//		}
-	//	}
-	//	s << endl;
-	//}
-	//return s.str();
 }

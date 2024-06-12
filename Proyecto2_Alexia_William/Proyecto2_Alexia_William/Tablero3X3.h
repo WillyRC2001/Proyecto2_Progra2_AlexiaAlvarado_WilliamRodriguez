@@ -7,10 +7,11 @@ private:
 public:
 	Tablero3x3();
 	virtual~Tablero3x3();
-	virtual char* GetValorCelda(int, int) override;
-	virtual void SetLineaCelda(int, int) override;
-	virtual bool Vacio(int, int) override;
-	virtual string toString() const;
 	virtual int AnchuraColumnas() const;
 	virtual int AlturaFilas() const;
+	virtual char* GetValorCelda(int, int) const override;
+	virtual void SetLineaCelda(int, int) override;
+	virtual bool Vacio(int, int) const override;
+	virtual string toString() const;
+	
 };

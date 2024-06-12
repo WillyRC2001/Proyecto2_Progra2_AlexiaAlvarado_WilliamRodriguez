@@ -55,12 +55,6 @@
     <Filter Include="Archivos de origen\Estrategia_CPP">
       <UniqueIdentifier>{753ae49b-b730-429c-8486-9ff70770c974}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Archivos_H">
-      <UniqueIdentifier>{4d14b12d-3788-4995-bc8a-0d167d373fa2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Archivos_CPP">
-      <UniqueIdentifier>{a866ef5a-b00a-42cd-95cb-af3e0585ee97}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\Memento_H">
       <UniqueIdentifier>{4c7d6248-d0b6-489c-91aa-0e5d6263251e}</UniqueIdentifier>
     </Filter>
@@ -135,14 +129,17 @@
     <ClCompile Include="EstrategiaPeriferico.cpp">
       <Filter>Archivos de origen\Estrategia_CPP</Filter>
     </ClCompile>
-    <ClCompile Include="Guarda.cpp">
-      <Filter>Archivos de origen\Archivos_CPP</Filter>
-    </ClCompile>
     <ClCompile Include="IterArreglo.cpp">
       <Filter>Archivos de origen\Memento_CPP</Filter>
     </ClCompile>
     <ClCompile Include="RepositorioMementos.cpp">
       <Filter>Archivos de origen\Memento_CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Controladora.cpp">
+      <Filter>Archivos de origen\Interfaz MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcepcionArchivo.cpp">
+      <Filter>Archivos de origen\Excepciones_CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,9 +227,6 @@
     <ClInclude Include="EstrategiaIslas.h">
       <Filter>Archivos de encabezado\Estrategia_H</Filter>
     </ClInclude>
-    <ClInclude Include="Guarda.h">
-      <Filter>Archivos de encabezado\Archivos_H</Filter>
-    </ClInclude>
     <ClInclude Include="Memento.h">
       <Filter>Archivos de encabezado\Memento_H</Filter>
     </ClInclude>
@@ -253,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="Mementos.h">
       <Filter>Archivos de encabezado\ClasePequeñas</Filter>
+    </ClInclude>
+    <ClInclude Include="Controladora.h">
+      <Filter>Archivos de encabezado\Interfaz_H</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

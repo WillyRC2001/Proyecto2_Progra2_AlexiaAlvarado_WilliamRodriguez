@@ -1,6 +1,8 @@
 #include "EstrategiaAleatoria.h"
 
-EstrategiaAleatoria::EstrategiaAleatoria() : Estrategia() {
+EstrategiaAleatoria::EstrategiaAleatoria() : Estrategia() 
+{
+	this->tipo = 1;
 }
 EstrategiaAleatoria::~EstrategiaAleatoria() {}
 int EstrategiaAleatoria::getFila() {
@@ -12,4 +14,7 @@ int EstrategiaAleatoria::getColumna() {
 	return c;
 }
 
-//void EstrategiaAleatoria::dumb(){}
+int EstrategiaAleatoria::getTipo()
+{
+	return tipo;
+}

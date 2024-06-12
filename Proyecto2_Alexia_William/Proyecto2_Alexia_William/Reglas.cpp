@@ -15,5 +15,6 @@ void Reglas::Generales()
 	cout << "4- Si se comete error en trazar un linea en una zona no permitida, pierdes el turno." << endl;
 	cout << "5- Cada vez que un jugador completa un cuadrado, \n   se escribe su inicial en el centro del cuadrado." << endl;
 	cout << "6- El jugador que gana es el que posea mas cuadros/puntos." << endl << endl;
+	cout << "7- Para guardar la partida, el jugador debe acceder al menu juego  y  \n   seleccionar la opcion 'Ver partida' y si lo desea guardar la partida. " << endl << endl;
 	cout << "\033[34m" << "========================================================================" "\033[0m" << endl;
 }

@@ -1,10 +1,8 @@
+
 #pragma once
 #include "Estrategia.h"
 
 class EstrategiaCercano : public Estrategia {
-private:
-	//TableroJuego* tablero = NULL;
-	//bool buscarCerca(TableroJuego* tablero, int& fila, int& columna);
 
 public:
 	EstrategiaCercano();
@@ -12,8 +10,9 @@ public:
 	void buscarCerca(int f, int c, TableroJuego* tab);
 	int getFila();
 	int getColumna();
+	int getTipo();
+
 	//Metodos Basura (Pero NO BORRAR)
 	bool buscarPeriferico(TableroJuego* tab) { return false; }
-	void aplicarEstrategia(TableroJuego* tab){}
-	//void dumb();
+	int posicionRandom(TableroJuego* tab, int& fila, int& columna) { return 0; }
 };

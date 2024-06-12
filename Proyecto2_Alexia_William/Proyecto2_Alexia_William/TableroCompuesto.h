@@ -9,23 +9,21 @@ private:
 public:
 	TableroCompuesto();
 	virtual~TableroCompuesto();
-	bool AddMatriz(TableroComponente*);
+
 	int GetCantidad() const;
 	TableroComponente* GetMatriz(int index) const;
 
 	//METODOS M.V.P
-	//estos metodos seradesarrollados con valores por defecto
-	//ya que solo interezan desarrollarlo en las matrices de 3x3, 3x4, 3x5
-	virtual char* GetValorCelda(int, int) override;
-	virtual void SetLineaCelda(int, int) override;
-
-	virtual bool Vacio(int, int) override;
-	virtual string toString() const override;
-
+	
 	TableroComponente* obtenerMatriz(int pos) {
 		return vec[pos];
 	}
-	virtual int AnchuraColumnas() const;
-	virtual int AlturaFilas() const;
+	virtual char* GetValorCelda(int, int) const override; //get valor celda
+	virtual void SetLineaCelda(int, int) override; //set valor celda
+	virtual int AnchuraColumnas() const; //get columnas
+	virtual int AlturaFilas() const; //get filas
+	virtual bool Vacio(int, int) const override;
+	virtual string toString() const override;
+	bool AddMatriz(TableroComponente*);
 
 };

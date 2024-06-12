@@ -2,6 +2,7 @@
 
 EstrategiaCercano::EstrategiaCercano():Estrategia()
 {
+	this->tipo = 2;
 }
 
 EstrategiaCercano::~EstrategiaCercano()
@@ -37,4 +38,9 @@ int EstrategiaCercano::getFila() {
 }
 int EstrategiaCercano::getColumna() {
 	return columna;
+}
+
+int EstrategiaCercano::getTipo()
+{
+	return tipo;
 }

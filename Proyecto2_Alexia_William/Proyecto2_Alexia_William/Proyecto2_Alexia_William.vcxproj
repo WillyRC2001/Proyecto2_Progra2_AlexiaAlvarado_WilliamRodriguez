@@ -127,13 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Controladora.cpp" />
     <ClCompile Include="EstrategiaAleatoria.cpp" />
     <ClCompile Include="EstrategiaCentral.cpp" />
     <ClCompile Include="EstrategiaCercano.cpp" />
     <ClCompile Include="EstrategiaIslas.cpp" />
     <ClCompile Include="EstrategiaPeriferico.cpp" />
+    <ClCompile Include="ExcepcionArchivo.cpp" />
     <ClCompile Include="ExcepcionFueraRango.cpp" />
-    <ClCompile Include="Guarda.cpp" />
     <ClCompile Include="IterArreglo.cpp" />
     <ClCompile Include="Juego.cpp" />
     <ClCompile Include="Jugada.cpp" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClasesUtiles.h" />
+    <ClInclude Include="Controladora.h" />
     <ClInclude Include="Estrategia.h" />
     <ClInclude Include="EstrategiaAleatoria.h" />
     <ClInclude Include="EstrategiaCentral.h" />
@@ -165,7 +167,6 @@
     <ClInclude Include="Excepciones_H.h" />
     <ClInclude Include="ExcepcionFueraRango.h" />
     <ClInclude Include="ExcepecionArchivo.h" />
-    <ClInclude Include="Guarda.h" />
     <ClInclude Include="Iterador.h" />
     <ClInclude Include="IterArreglo.h" />
     <ClInclude Include="Juego.h" />

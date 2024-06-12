@@ -7,9 +7,9 @@ public:
 	virtual ~EstrategiaCentral();
 	int getFila();
 	int getColumna();
+	int getTipo();
 	//Metodos Basura (Pero NO BORRAR)
 	void buscarCerca(int fila, int columna, TableroJuego* tab) {}
 	bool buscarPeriferico(TableroJuego* tab) { return false; }
-	void aplicarEstrategia(TableroJuego* tab){}
-	//void dumb();
+	int posicionRandom(TableroJuego* tab, int& fila, int& columna) { return 0; }
 };

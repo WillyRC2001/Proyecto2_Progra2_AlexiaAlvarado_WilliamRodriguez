@@ -23,18 +23,13 @@ Tablero3x5::~Tablero3x5() {
 int Tablero3x5::AnchuraColumnas() const { return 11; };
 int Tablero3x5::AlturaFilas() const { return 7; };
 
-char* Tablero3x5::GetValorCelda(int f, int c) {
+char* Tablero3x5::GetValorCelda(int f, int c) const{
 	if (f < 0 || f >= 7 || c < 0 || c >= 11) {
 		throw out_of_range("posicion fuera del tablero");
 	}
 	else {
 		return &tablero[f][c];
 	}
-
-	/*if (f >= 0 && f < 7 && c >= 0 && c < 7) {
-		return string(1, tablero[f][c]);
-	}
-	return "";*/
 }
 
 void Tablero3x5::SetLineaCelda(int f, int c)
@@ -58,11 +53,9 @@ void Tablero3x5::SetLineaCelda(int f, int c)
 	}
 }
 
-bool Tablero3x5::Vacio(int f, int c) {
+bool Tablero3x5::Vacio(int f, int c) const {
 	return (tablero[f][c] != '|' && tablero[f][c] != '-');
 }
-//void Tablero3x5::Add(TableroComponente*) {}
-	//Supongo que será un metodo para agregar otro Tablero
 
 string Tablero3x5::toString() const {
 	// Agregar los números de las columnas

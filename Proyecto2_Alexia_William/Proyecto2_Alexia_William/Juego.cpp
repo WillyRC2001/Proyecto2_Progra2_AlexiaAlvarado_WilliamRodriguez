@@ -1,14 +1,26 @@
 #include "Juego.h"
+#include <string>
 
-Juego::Juego(Jugador* jug1, Jugador* jug2, TableroJuego* tab)
+Juego* Juego::juego = nullptr;
+
+Juego::Juego()
 {
-	jugador1 = jug1;
-	jugador2 = jug2;
-	juego = tab;
+	this->tablero = new TableroJuego();
+	this->rm = nullptr;
+	this->org = nullptr;
+	this->con = 1;
 }
 
 Juego::~Juego()
 {
+}
+
+Juego* Juego::getJuego()
+{
+	if (juego == nullptr) {
+		juego = new Juego();
+	}
+	return juego;
 }
 
 Jugador* Juego::getJugador1()
@@ -23,7 +35,12 @@ Jugador* Juego::getJugador2()
 
 TableroJuego* Juego::getCampo()
 {
-	return juego;
+	return tablero;
+}
+
+void Juego::activarTablero(TableroCompuesto* comp)
+{
+	tablero->ActivarMatriz(comp);
 }
 
 string Juego::InfoJugador_1()
@@ -38,26 +55,41 @@ string Juego::InfoJugador_2()
 
 string Juego::MostrarTablero()
 {
-	return juego->toString();
+	return tablero->toString();
 }
 
-void Juego::HacerJugada(Jugador* jug, int f,int c)
+int Juego::HacerJugada(Jugada* jug, int f,int c)
 {
-	string opreglas;
-	Jugada* jugada = new Jugada(jug);
-	jugada->AgregarLinea(f, c, juego);
-	delete jugada;
+	int resultado = jug->anatorPunto(f, c);
+	if (resultado == 1) { return 1; }
+	else if (resultado == 2) { return 2; }
+	else { return 0; }
 }
-void Juego::HacerJugadaCompu(JugadorComputadora* jug, int f, int c, int tip_estrategia)
+int Juego::HacerJugadaCompu(JugadorComputadora* jug, int f, int c, int tip_estrategia)
 {
 	string opreglas;
 	Jugada* jugada = new Jugada(jug);
-	jugada->AgregarLineaCompu(jug, juego, f, c, tip_estrategia);
+	jugada->AgregarLineaCompu(jug, tablero, f, c, tip_estrategia);
 	delete jugada;
+	return 0;
+
+}
+
+int Juego::comanotarPosicion(Jugada* jug, int f, int c)
+{
+	int resultado = jug->comanatorPunto(f, c);
+	if (resultado == 1) { return 1; }
+	else if (resultado == 2) { return 2; }
+	else { return 0; }
 }
 
 bool Juego::HayJugada() {
-	return juego->HayEspacios();
+	if (tablero->HayEspacios() == true) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 void Juego::crearMemento()

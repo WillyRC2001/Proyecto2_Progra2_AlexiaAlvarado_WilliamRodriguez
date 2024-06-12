@@ -12,7 +12,12 @@ TableroCompuesto::~TableroCompuesto() {
 	delete[] vec;
 }
 
-char* TableroCompuesto::GetValorCelda(int f, int c){
+char* TableroCompuesto::GetValorCelda(int f, int c) const{
+	for (int i = 0; i < can; ++i) {
+		if (!vec[i]->Vacio(f, c)) {
+			return vec[i]->GetValorCelda(f, c);
+		}
+	}
 	return new char(' ');
 }
 
@@ -25,7 +30,7 @@ void TableroCompuesto::SetLineaCelda(int f, int c){
 	}
 }
 
-bool TableroCompuesto::Vacio(int f, int c){
+bool TableroCompuesto::Vacio(int f, int c) const{
 	for (int i = 0; i < can; ++i) {
 		if (!vec[i]->Vacio(f, c)) {
 			return false;
@@ -38,9 +43,7 @@ bool TableroCompuesto::AddMatriz(TableroComponente* nuevo) {
 		vec[can++] = nuevo;
 		return true;
 	}
-	else {
-		return false; 
-	}
+	return false;
 }
 
 int TableroCompuesto::GetCantidad() const
@@ -64,5 +67,17 @@ string TableroCompuesto::toString() const{
 	return s.str();
 	return "";
 }
-int TableroCompuesto::AnchuraColumnas() const { return 0; }
-int TableroCompuesto::AlturaFilas() const { return 0; }
+int TableroCompuesto::AnchuraColumnas() const {
+	int anchura = 0;
+	for (int i = 0; i < can; ++i) {
+		anchura += vec[i]->AnchuraColumnas();
+	}
+	return anchura;
+} //get columna
+int TableroCompuesto::AlturaFilas() const {
+	int altura = 0;
+	for (int i = 0; i < can; ++i) {
+		altura += vec[i]->AlturaFilas();
+	}
+	return altura;
+} //get fila

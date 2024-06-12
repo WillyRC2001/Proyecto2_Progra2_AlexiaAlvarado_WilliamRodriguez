@@ -1,6 +1,6 @@
 #include "JugadorComputadora.h"
 
-JugadorComputadora::JugadorComputadora():Jugador("Computadora")
+JugadorComputadora::JugadorComputadora(string nom, Estrategia* est) : Jugador(nom)
 {
 	this->estrategia = new EstrategiaAleatoria();
 	this->Letra = '#';
@@ -11,6 +11,7 @@ JugadorComputadora::~JugadorComputadora(){
 string JugadorComputadora::getNombreJugador(){
 	return this->getNombreJugador();
 }
+void JugadorComputadora::setNombreJugador(string jug) { nombre = jug; }
 char JugadorComputadora::getInicial(){
 	return Letra;
 }
@@ -20,12 +21,22 @@ int JugadorComputadora::getPuntos(){
 void JugadorComputadora::setPuntos(int punt){
 	puntos = punt;
 }
-string JugadorComputadora::toString() const { return " "; }
-Estrategia* JugadorComputadora::getestrategia() {
+void JugadorComputadora::aumentarPuntos() { puntos++; }
+string JugadorComputadora::toString() const 
+{
+	stringstream s;
+	s << "\t" << nombre << " , tiene " << puntos << " puntos" << endl;
+	return s.str();
+}
+Estrategia* JugadorComputadora::obtenerEstrategias() {
 	return estrategia;
 }
-void JugadorComputadora::setNombreJugador(string jug){}
-void JugadorComputadora::aumentarPuntos(){}
+
+void JugadorComputadora::setearEstrategias(Estrategia* estra)
+{
+	if (estrategia != nullptr) delete estrategia;
+	estrategia = estra;
+}
 
 //Estrategias
 void JugadorComputadora::estrategiaAleatoria(){

@@ -12,13 +12,12 @@ TableroJuego::TableroJuego() : filas(20), columnas(20) {
 
 TableroJuego::~TableroJuego() {
     for (int i = 0; i < filas; i++) {
-        for (int j = 0; j < columnas; ) {
-            delete mat[i];
-        }
+        delete[] mat[i];
     }
+    delete[] mat;
 }
 
-bool TableroJuego::Vacio(int x, int y) {
+bool TableroJuego::Vacio(int x, int y) const{
     return (mat[x][y] != '|' && mat[x][y] != '-');
 }
 
@@ -31,60 +30,36 @@ char TableroJuego::GetValorCelda(int x, int y) {
     }
 }
 bool TableroJuego::SetLineaCelda(int x, int y) {
-    bool verificar;
+    bool verificar = false;
     if (x < 0 || x >= filas || y < 0 || y >= columnas) {
-        throw out_of_range("Posición fuera del tablero habilitado...");
+        throw std::out_of_range("Posición fuera del tablero habilitado...");
     }
 
-    //Verificar si se puede agregar la linea vertical o horizontal
-    if (mat[x][y] != 'O') {
-        if ((x % 2 == 1 && y % 2 == 0) && (mat[x][y] == ' ') || (x % 2 == 0 && y % 2 == 1) && (mat[x][y] == ' ')) {
-            if (x % 2 == 0 && y % 2 == 1) {
-                mat[x][y] = '|';  // Línea vertical
-                verificar = true;
-            }
-            else {
-                mat[x][y] = '-';  // Línea horizontal
-                verificar = true;
-            }
-        }
-        else {
-            verificar = false;
-            //cout << "No se puede agregar la linea en los vertices, centro o zonas repetidas" << endl;
+    if (mat[x][y] == ' ') {
+        if ((x % 2 == 0 && y % 2 == 1) || (x % 2 == 1 && y % 2 == 0)) {
+            mat[x][y] = (x % 2 == 0) ? '|' : '-';
+            verificar = true;
         }
     }
-    else
-        verificar = false;
-        //cout << "Fuera de Rango" << endl;
     return verificar;
 }
 
-string TableroJuego::toString() const {
-    stringstream s;
-
-    // Agrega números de las columnas para mas estética
-    s << "    ";
-    for (int col = 0; col < 20; ++col) {
-        if(col <= 9)            // Un if-else extra solo para que quede bonita la matriz
-            s << "  " << col;   // Número de la columna de 0 a 9
-        else
-            s << " " << col;    // Número de la columna de 10 a 19
-    }
-    s << endl;
-
+bool TableroJuego::CasillaLlena(char nom) {
+    bool verificacion = false;
+    //Recorre la matriz 20X20
     for (int i = 0; i < filas; i++) {
-        s << endl;
-        if(i <= 9)                      // Un if-else extra solo para que quede bonita la matriz
-            s << "  " << i << "   ";    // Número de la fila de 0 a 9
-        else
-            s << "  " << i << "  ";     // Número de la fila de 10 a 19
         for (int j = 0; j < columnas; j++) {
-            s << mat[i][j] << "  "; 
+            //los centros de la matriz son cuando las filas y columnas son impares
+            if (i % 2 == 0 && j % 2 == 0 && mat[i][j] == ' ') { //La condicion mat[i][j] == ' ' es para verificar si está dentro del rango y no esté ya ocupado
+                if (mat[i][j - 1] != ' ' && mat[i][j + 1] != ' ' && mat[i - 1][j] != ' ' && mat[i + 1][j] != ' ') {
+                    mat[i][j] = nom;
+                    verificacion = true;
+                }
+            }
         }
     }
-    return s.str();
+    return verificacion;
 }
-
 
 void TableroJuego::ActivarMatriz(TableroCompuesto* vec) {
 
@@ -113,44 +88,65 @@ void TableroJuego::ActivarMatriz(TableroCompuesto* vec) {
                         }
                 }
             } while (!Pos_Valida);
-            
+
             //Imprimiendo la matriz
             for (int i = 0; i < filas; i++) {
                 for (int j = 0; j < columnas; j++) {
-                    mat[x + i][y + j] = *vec->obtenerMatriz(a)->GetValorCelda(i,j);
+                    mat[x + i][y + j] = *vec->obtenerMatriz(a)->GetValorCelda(i, j);
                 }
             }
         }
     }
-}
-
-bool TableroJuego::CasillaLlena(char nom) {
-    bool verificacion = false;
-    //Recorre la matriz 20X20
-    for (int i = 0; i < filas; i++) {
-        for (int j = 0; j < columnas; j++) {
-            //los centros de la matriz son cuando las filas y columnas son impares
-            if (i % 2 == 0 && j % 2 == 0 && mat[i][j] == ' ') { //La condicion mat[i][j] == ' ' es para verificar si está dentro del rango y no esté ya ocupado
-                if (mat[i][j - 1] != ' ' && mat[i][j + 1] != ' ' && mat[i - 1][j] != ' ' && mat[i + 1][j] != ' ') {
-                    mat[i][j] = nom;
-                    verificacion = true;
-                }
-            }
-        }
-    }
-    return verificacion;
 }
 
 bool TableroJuego::HayEspacios()
 {
-    bool espacio = false;
+    /*bool espacio = false;
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
             if (mat[i][j] == ' ')
                 espacio = true;
         }
     }
-    return espacio;
+    return espacio;*/
+    for (int fila = 0; fila < filas; fila++) {
+        for (int col = 0; col < 23; col++) {
+            if (mat[fila][col] != 'O') {
+                if ((fila % 2 == 1 && col % 2 == 0) || (fila % 2 == 0 && col % 2 == 1)) {
+                    if (mat[fila][col] == ' ')
+                        return true;
+                }
+            }
+
+        }
+    }
+    return false;
+}
+
+string TableroJuego::toString() const {
+    stringstream ss;
+    cout << "TABLERO JUGADA" << endl;
+    // Agrega números de las columnas para más estética
+    cout << "    ";
+    for (int col = 0; col < 20; ++col) {
+        if (col <= 9)
+            cout << "  " << col; // Número de la columna de 0 a 9
+        else
+            cout << " " << col; // Número de la columna de 10 a 19
+    }
+    cout << endl;
+
+    for (int i = 0; i < filas; i++) {
+        if (i <= 9)
+            cout << "  " << i << "   "; // Número de la fila de 0 a 9
+        else
+            cout << "  " << i << "  "; // Número de la fila de 10 a 19
+        for (int j = 0; j < columnas; j++) {
+            cout << mat[i][j] << "  ";
+        }
+        cout << endl;
+    }
+    return "";
 }
 
 int TableroJuego::AnchuraColumnas() const

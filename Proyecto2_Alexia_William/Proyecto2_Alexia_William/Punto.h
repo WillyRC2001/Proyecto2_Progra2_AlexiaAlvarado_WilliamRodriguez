@@ -6,8 +6,10 @@ class Punto
 private:
 	TableroJuego* tablero;
 public:
-	Punto(TableroJuego*);
+	Punto(TableroJuego* = nullptr);
 	virtual~Punto();
-	void anotarLinea(int, int);
-	void anotarPuntoGanador(char);
+	TableroJuego* getTablero();
+	int anotarPunto(int, int, char);
+	string toString() const;
+	bool quedaEspacio();
 };

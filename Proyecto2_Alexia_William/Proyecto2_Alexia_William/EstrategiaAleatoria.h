@@ -7,9 +7,12 @@ public:
 	virtual ~EstrategiaAleatoria();
 	int getFila();
 	int getColumna();
-	//Metodos Basura (Pero NO BORRAR)
+	virtual int getTipo();
+	//virtual void estrategia(int, int, TableroJuego*);
+	
+	//basura xd
 	void buscarCerca(int f, int c, TableroJuego* tab) {}
 	bool buscarPeriferico(TableroJuego* tab) { return false; }
-	void aplicarEstrategia(TableroJuego* tab){}
-	//void dumb();
+	int posicionRandom(TableroJuego* tab, int& fila, int& columna) { return 0; }
+
 };

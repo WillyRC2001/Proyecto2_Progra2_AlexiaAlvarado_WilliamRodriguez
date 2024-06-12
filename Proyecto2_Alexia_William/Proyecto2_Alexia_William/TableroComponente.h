@@ -5,18 +5,15 @@
 class TableroComponente : public ObjetoBase{
 protected: 
 
-
 public:
 	TableroComponente()=default;
 	virtual~TableroComponente()=default;
 
-	virtual char* GetValorCelda(int, int) = 0;
-	virtual void SetLineaCelda(int, int) = 0;
-
-	virtual bool Vacio(int, int) = 0;
-	//virtual bool Add(TableroComponente*) = 0; //yo lo elimino de aqui y lo dejo como solo del compuesto
+	virtual char* GetValorCelda(int, int) const = 0;
+	virtual void SetLineaCelda(int, int) = 0; //set valor celda
+	virtual bool Vacio(int, int) const = 0;
 	virtual string toString() const = 0;
-	virtual int AnchuraColumnas() const = 0;
-	virtual int AlturaFilas() const = 0;
+	virtual int AnchuraColumnas() const = 0; //get columnas
+	virtual int AlturaFilas() const = 0; //get filas
 	
-};
+}; 
